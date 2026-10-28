@@ -1,0 +1,42 @@
+FOUNDER'S EXHIBITION — EDITING GUIDE
+
+The website has 10 sample stalls and 10 sub-stalls in each stall. Edit the data section near the beginning of the <script> in index.html, starting at const stalls = [.
+
+FOR EACH STALL
+- imageFolder: keep as stall-1, stall-2, ... stall-10 so subcategory photos resolve to the correct folder.
+- venue: shown on the main stall tile and on the stall detail header; it is not shown on subcategory tiles.
+- name: displayed stall name (currently stall-1, stall-2, ... stall-10)
+- stallImage: main image filename. Example: stall-1.jpg
+- venue: stall location
+- owner: in-charge/coordinator
+- desc: stall description
+- category: category/filter label
+
+MAIN IMAGE PATHS
+- images/stalls/stall-1.jpg
+- images/stalls/stall-2.jpg
+- ...
+- images/stalls/stall-10.jpg
+
+FOR EACH SUB-STALL
+- name: displayed sub-stall name (currently substall-1 through substall-10)
+- image: image filename (currently substall-1.jpg through substall-10.jpg)
+- desc: description, price, or other details
+- emoji: fallback icon
+
+SUB-STALL IMAGE PATHS
+Each stall has its own folder to avoid filename collisions. For example:
+- images/subcategories/stall-1/substall-1.jpg
+- images/subcategories/stall-1/substall-2.jpg
+- ...
+- images/subcategories/stall-2/substall-1.jpg
+
+IMPORTANT
+- Put the real image files in the exact folders and keep the spelling/capitalisation identical.
+- The image path is shown in a comment beside each image filename in the code.
+- Keep commas and quotation marks when editing JavaScript.
+- The 10 stalls and 100 sub-stalls are placeholders; replace their names, descriptions, in-charges, and venues with your actual information.
+- Like/dislike counts are stored locally in each visitor's browser, not shared globally.
+
+
+PLACEHOLDER PHOTOS: The supplied fabric-print photograph is copied to all 10 stall JPGs and all 100 sub-stall JPGs. Replace these files later with your own photos, keeping the same filenames. No emoji icons are used in the website.

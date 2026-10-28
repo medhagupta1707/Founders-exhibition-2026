@@ -18,7 +18,7 @@ header{background:linear-gradient(125deg,var(--navy) 0%,#123f72 34%,var(--teal) 
 .hero{max-width:1200px;margin:30px auto 0;display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}
 .hero h1{font-family:Georgia,serif;font-size:clamp(1.6rem,3vw,2.5rem);font-weight:500;line-height:1.12;margin:0 0 10px}
 .hero p{color:#f0f2fa;max-width:650px;margin:0;font-size:1rem}
-.hero-image{height:260px;border:1px solid #ffffff55;border-radius:18px;background:#111747 url("exhibition-promo-banner.png") center 44%/cover no-repeat;box-shadow:0 14px 36px #08092e55}
+.hero-image{height:260px;border:1px solid #ffffff55;border-radius:18px;background:#111747 url("scindia-kanya-vidyalaya.jpg") center 44%/cover no-repeat;box-shadow:0 14px 36px #08092e55}
 main{max-width:1200px;margin:auto;padding:24px clamp(14px,3vw,28px) 54px}
 .toolbar{display:flex;gap:12px;flex-wrap:wrap;background:white;border:1px solid var(--line);padding:13px;border-radius:15px;box-shadow:0 6px 20px #15164f0a}
 input,select{font:inherit;border:1px solid #d5d8e5;border-radius:10px;padding:12px 14px;background:white;color:var(--ink);min-width:0}input{flex:1;min-width:200px}
@@ -26,10 +26,20 @@ input,select{font:inherit;border:1px solid #d5d8e5;border-radius:10px;padding:12
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .tile{border:1px solid var(--line);background:white;border-radius:17px;overflow:hidden;display:flex;flex-direction:column;min-width:0;box-shadow:0 5px 22px #1013470a;transition:transform .18s ease,box-shadow .18s ease}
 .tile:hover{transform:translateY(-3px);box-shadow:0 12px 28px #10134718}
-.tile-art{height:150px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#17164f,#087d91 65%,#b52b83);color:white}
+.tile-art{height:280px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#17164f,#087d91 65%,#b52b83);color:white}
 .tile-art:before{content:"";position:absolute;width:180px;height:180px;border:1px solid #ffffff42;border-radius:50%;right:-40px;top:-72px}
 .tile-art:after{content:"";position:absolute;width:115px;height:115px;border:1px solid #ffffff42;border-radius:50%;left:-24px;bottom:-56px}
 .emoji{font-size:3.5rem;position:relative;z-index:1;filter:drop-shadow(0 4px 6px #0003)}
+.photo-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;padding:14px;text-align:center;color:#34375e;background:repeating-linear-gradient(135deg,#f6f7fc,#f6f7fc 12px,#eceefa 12px,#eceefa 24px);z-index:1}
+.photo-placeholder .placeholder-icon{font-size:2.5rem;line-height:1;color:#087d91}
+.photo-placeholder strong{font-size:.95rem}
+.photo-placeholder small{font-size:.72rem;overflow-wrap:anywhere;color:#656a7b}
+.photo-placeholder[hidden]{display:none!important}
+.stall-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;z-index:2;background:#fff;padding:6px}
+.stall-photo[hidden]{display:none!important}
+.sub-art{position:relative;overflow:hidden}
+.sub-art .emoji{font-size:2.6rem}
+.detail-top .tile-art .stall-photo{border-radius:14px}
 .tile-body{padding:17px;display:flex;flex-direction:column;align-items:flex-start;flex:1}
 .eyebrow{color:var(--magenta);font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800}
 .tile h3{font-family:Georgia,serif;color:var(--navy);font-size:1.28rem;line-height:1.2;margin:6px 0 8px}
@@ -39,18 +49,57 @@ input,select{font:inherit;border:1px solid #d5d8e5;border-radius:10px;padding:12
 .open-btn:focus-visible,.back-btn:focus-visible,.chip:focus-visible{outline:3px solid var(--pink);outline-offset:2px}
 .sub-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .sub-tile{border:1px solid var(--line);border-radius:15px;background:white;overflow:hidden;display:flex;flex-direction:column;min-height:220px;box-shadow:0 5px 22px #1013470a}
-.sub-art{height:112px;background:linear-gradient(135deg,#e7e9f6,#d5eef0 60%,#f8e2f0);display:flex;align-items:center;justify-content:center;font-size:2.6rem}
+.sub-art{height:260px;background:linear-gradient(135deg,#e7e9f6,#d5eef0 60%,#f8e2f0);display:flex;align-items:center;justify-content:center;font-size:2.6rem}
 .sub-body{padding:15px;display:flex;flex-direction:column;flex:1}
 .sub-body h3{font-family:Georgia,serif;font-size:1.16rem;color:var(--navy);margin:0 0 7px}
 .sub-body p{color:#5c6171;font-size:.88rem;margin:0 0 12px}
-.detail-top{display:flex;gap:16px;align-items:center;margin:5px 0 22px}.detail-top .tile-art{height:86px;width:100px;flex:0 0 100px;border-radius:14px}.detail-title{flex:1}.detail-title h2{font-family:Georgia,serif;color:var(--navy);font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.15;margin:0}.detail-title p{margin:5px 0 0;color:var(--muted)}
+.detail-top{display:flex;gap:16px;align-items:center;margin:5px 0 22px}.detail-top .tile-art{height:140px;width:180px;flex:0 0 180px;border-radius:14px}.detail-title{flex:1}.detail-title h2{font-family:Georgia,serif;color:var(--navy);font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.15;margin:0}.detail-title p{margin:5px 0 0;color:var(--muted)}
 .info-strip{margin-top:22px;border:1px dashed #b9bfd5;background:#f0f1f9;border-radius:12px;padding:13px 15px;color:#555b70;font-size:.86rem}
 .visit-banner{max-width:1200px;margin:0 auto 26px;padding:0 clamp(14px,3vw,28px)}.visit-inner{border-radius:16px;padding:22px 24px;background:linear-gradient(115deg,#17164f,#174a7e 52%,#087d91);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:18px}.visit-inner h2{font-family:Georgia,serif;margin:0 0 5px;font-size:clamp(1.35rem,2.5vw,2rem)}.visit-inner p{margin:0;color:#edf2ff}.visit-tag{display:inline-block;margin-top:8px;color:#f3b7dd;font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem}.social-section{background:#11143d;color:white;padding:28px 16px 32px;text-align:center}.social-section h2{font-family:Georgia,serif;margin:0 0 5px}.social-section p{margin:0 0 18px;color:#d6d8ea}.social-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.social-link{display:flex;align-items:center;gap:9px;border:1px solid #ffffff40;border-radius:12px;padding:10px 15px;color:#fff;text-decoration:none;min-width:140px;background:#ffffff0b}.social-link:hover{background:#ffffff1a}.social-icon{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:#fff;color:#17164f;font-weight:900}.social-link small{display:block;color:#d6d8ea;font-size:.72rem}.social-link strong{display:block;font-size:.9rem}.social-note{margin-top:14px!important;font-size:.78rem!important;color:#bfc5e0!important}.visit-cta{display:inline-block;text-decoration:none;border-radius:10px;padding:11px 16px;background:#fff;color:#17164f;font-weight:800;white-space:nowrap}
 .hidden{display:none!important}.empty{grid-column:1/-1;text-align:center;padding:35px;background:white;border:1px solid var(--line);border-radius:15px;color:var(--muted)}
 footer{background:var(--navy);color:#fff;text-align:center;padding:24px 16px}footer strong{font-family:Georgia,serif;font-size:1.15rem}footer p{color:#d6d8ea;font-size:.83rem;margin:5px 0 0}
 @media(max-width:850px){.grid,.sub-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{grid-template-columns:1fr}.hero-image{height:180px}}
-@media(max-width:560px){.visit-inner{display:block;padding:19px}.visit-cta{margin-top:14px}.brand{gap:13px;align-items:center}.logo-wrap{width:66px;height:64px}.school-name{font-size:1.35rem;letter-spacing:.025em}.exhibition-label{font-size:.78rem;letter-spacing:.12em}.hero{margin-top:23px}.hero-image{height:145px}.grid,.sub-grid{grid-template-columns:1fr}.tile-art{height:170px}.section-heading{display:block}.section-heading h2{font-size:1.75rem}.detail-top{align-items:flex-start}.detail-top .tile-art{width:76px;flex-basis:76px;height:76px}.toolbar input{min-width:100%}}
-</style>
+@media(max-width:560px){.tile-art{height:240px}.sub-art{height:230px}.visit-inner{display:block;padding:19px}.visit-cta{margin-top:14px}.brand{gap:13px;align-items:center}.logo-wrap{width:66px;height:64px}.school-name{font-size:1.35rem;letter-spacing:.025em}.exhibition-label{font-size:.78rem;letter-spacing:.12em}.hero{margin-top:23px}.hero-image{height:145px}.grid,.sub-grid{grid-template-columns:1fr}.tile-art{height:170px}.section-heading{display:block}.section-heading h2{font-size:1.75rem}.detail-top{align-items:flex-start}.detail-top .tile-art{width:110px;flex-basis:110px;height:110px}.toolbar input{min-width:100%}}
+
+	/* Like and Dislike buttons for each subcategory item */
+.reaction-buttons {
+display: flex;
+gap: 10px;
+margin-top: auto;
+padding-top: 12px;
+flex-wrap: wrap;
+}
+
+.reaction-btn {
+flex: 1;
+padding: 8px 10px;
+border: 1px solid #e0e2ed;
+border-radius: 20px;
+background: #fff;
+color: #17164f;
+cursor: pointer;
+font-size: 13px;
+font-weight: 600;
+transition: background .2s, border-color .2s;
+}
+
+.reaction-btn:hover {
+background: #f0f1f9;
+}
+
+.reaction-btn.liked {
+background: #dcfce7;
+border-color: #16a34a;
+color: #166534;
+}
+
+.reaction-btn.disliked {
+background: #fee2e2;
+border-color: #dc2626;
+color: #991b1b;
+}
+
+	</style>
 </head>
 <body>
 <header>
@@ -59,7 +108,7 @@ footer{background:var(--navy);color:#fff;text-align:center;padding:24px 16px}foo
     <div>
       <div class="school-name">Scindia Kanya Vidyalaya</div>
       <div class="exhibition-label">Founder’s Exhibition · 2026</div>
-      <div class="exhibition-label" style="font-size:.85rem;letter-spacing:.22em;color:#fff;margin-top:5px">IMAGINING TOMORROW</div>
+      <div class="exhibition-label" style="font-size:.85rem;letter-spacing:.22em;color:#fff;margin-top:5px">Service | Heritage | Enterprise</div>
     </div>
   </div>
   <div class="hero">
@@ -70,7 +119,7 @@ footer{background:var(--navy);color:#fff;text-align:center;padding:24px 16px}foo
     <div class="hero-image" role="img" aria-label="Founder’s Exhibition 2026 promotional artwork"></div>
   </div>
 </header>
-<section class="visit-banner"><div class="visit-inner"><div><h2>Dear Parents, do visit our exhibition website!</h2><p>Browse the stalls before your visit and discover what awaits you at the exhibition.</p><span class="visit-tag">Imagining Tomorrow · Founder’s Exhibition 2026</span></div><a class="visit-cta" href="#homeView" onclick="document.getElementById('homeView').scrollIntoView({behavior:'smooth'});return false;">Explore the stalls ↓</a></div></section>
+
 <main>
   <section id="homeView">
     <div class="toolbar">
@@ -86,7 +135,7 @@ footer{background:var(--navy);color:#fff;text-align:center;padding:24px 16px}foo
     <button class="back-btn" id="backButton" type="button">← All exhibition stalls</button>
     <div class="section-heading"><div><h2 id="detailHeading">Stall details</h2><p id="detailIntro">Choose a subcategory to explore.</p></div></div>
     <div class="detail-top">
-      <div class="tile-art"><span id="detailEmoji" class="emoji">🎨</span></div>
+      <div class="tile-art" id="detailArt"><span id="detailEmoji" class="emoji"></span></div>
       <div class="detail-title"><h2 id="detailName"></h2><p id="detailOwner"></p><p id="detailVenue">Venue: To be confirmed</p></div>
     </div>
     <div class="sub-grid" id="subGrid"></div>
@@ -94,97 +143,759 @@ footer{background:var(--navy);color:#fff;text-align:center;padding:24px 16px}foo
   </section>
 </main>
 <section class="social-section" aria-label="Official social media links"><h2>Follow SKV for updates</h2><p>Visit our official social media pages for exhibition updates and announcements.</p><div class="social-links">
-<a class="social-link" href="#" data-placeholder="youtube" aria-label="YouTube link placeholder"><span class="social-icon">▶</span><span><strong>YouTube</strong><small>Add channel link</small></span></a>
-<a class="social-link" href="#" data-placeholder="facebook" aria-label="Facebook link placeholder"><span class="social-icon">f</span><span><strong>Facebook</strong><small>Add page link</small></span></a>
-<a class="social-link" href="#" data-placeholder="instagram" aria-label="Instagram link placeholder"><span class="social-icon">◎</span><span><strong>Instagram</strong><small>Add page link</small></span></a>
-<a class="social-link" href="#" data-placeholder="x" aria-label="X link placeholder"><span class="social-icon">𝕏</span><span><strong>X / Twitter</strong><small>Add profile link</small></span></a>
+
+
+  <a class="social-link" href="https://www.youtube.com/c/scindiakanyavidyalayagwalior" data-placeholder="youtube" aria-label="YouTube link placeholder"><span class="social-icon">▶</span><span><strong>YouTube</strong><small>Add channel link</small></span></a>
+<a class="social-link" href="https://www.facebook.com/ScindiaKanyaVidyalayaGwalior/" data-placeholder="facebook" aria-label="Facebook link placeholder"><span class="social-icon">f</span><span><strong>Facebook</strong><small>Add page link</small></span></a>
+<a class="social-link" href="https://www.instagram.com/scindiakanyavidyalaya/" data-placeholder="instagram" aria-label="Instagram link placeholder"><span class="social-icon">◎</span><span><strong>Instagram</strong><small>Add page link</small></span></a>
+<a class="social-link" href="https://x.com/skvgwl1956" data-placeholder="x" aria-label="X link placeholder"><span class="social-icon">𝕏</span><span><strong>X / Twitter</strong><small>Add profile link</small></span></a>
 <a class="social-link" href="#" data-placeholder="linkedin" aria-label="LinkedIn link placeholder"><span class="social-icon">in</span><span><strong>LinkedIn</strong><small>Add page link</small></span></a>
-</div><p class="social-note">These are placeholders. Replace each “#” link with the school’s verified official URL before publishing.</p></section>
-<footer><strong>Founder’s Exhibition 2026 · Imagining Tomorrow</strong><p>Scindia Kanya Vidyalaya · Parents are invited to explore the exhibition stalls and visit us at school.</p></footer>
+</div><p class="social-note">Watch Founders' Day event live stream on our official YouTube channel</p></section>
+<footer><strong>Founder’s Exhibition 2026 · Imagining Tomorrow</strong><p>© 2026 All Rights Reserved to Scindia Kanya Vidyalaya  </p></footer>
 <script>
+// ============================================================
+// EDITABLE STALL DATA — EDIT THIS SECTION ONLY
+// 10 stalls × 10 sub-stalls per stall
+// Main photos: images/stalls/stall-1.jpg ... stall-10.jpg
+// Sub-stall photos: images/subcategories/stall-1/substall-1.jpg etc.
+// Keep the image filenames and folder names exactly as written.
+// ============================================================
 const stalls = [
- {name:"Home Science Creations",category:"Art & Handmade",emoji:"🧵",owner:"Ms Shweta Choudhary",desc:"Useful and creative products prepared through Home Science.",subs:[
-  ["Handmade creations","🪡","Explore the Home Science items made for the exhibition."],["Home décor","🏡","Creative pieces to brighten everyday spaces."],["Useful accessories","🧺","Practical handmade items; final product list to be added."]]},
- {name:"Paintings & Visual Art",category:"Art & Handmade",emoji:"🎨",owner:"Ms Kalpana",desc:"Artwork inspired by imagination, nature and the world around us.",subs:[
-  ["Acrylic on canvas","🖼️","Includes themes such as unity in diversity, space travel and peaceful coexistence with nature."],["Oil on canvas","🎨","Paintings created with rich colour and texture."],["Charcoal paintings","✏️","Expressive monochrome artwork using charcoal."],["Mandala art","☸️","Detailed patterns arranged in balanced, circular designs."],["Portraits: charcoal & acrylic","👤","Portrait studies in charcoal and acrylic."],["Glass painting","🪟","Decorative artwork on glass."],["Texture art","🧑‍🎨","Artworks that explore raised surfaces and tactile detail."],["Pencil shading","✏️","Drawings using light, shade and tonal contrast."],["Pen & ink artworks","🖋️","Illustrations created with lines, marks and ink."],["Decorated file covers","📚","File covers transformed with creative decoration."]]},
- {name:"Bio-Enzymes",category:"Eco-friendly & Nature",emoji:"🍊",owner:"Ms Vaishali",desc:"From peel to purpose: turning citrus waste into eco-friendly solutions.",subs:[
-  ["Citrus bio-enzyme","🍊","A citrus-peel-based eco-friendly solution."],["Waste-to-resource idea","♻️","Learn how fruit peels can be put to purposeful use."],["Sustainable living","🌱","Discover small ways to reduce waste and think sustainably."]]},
- {name:"Organic Products",category:"Food & Natural Products",emoji:"🌿",owner:"Ms Ancy Joseph",desc:"A selection of organic products; exact items can be added by the stall coordinator.",subs:[
-  ["Organic products","🌱","Explore the organic items displayed at this stall."],["Natural living","🍃","Products and ideas connected with natural living."],["Product details","🛍️","Ask the stall coordinator about available items and prices."]]},
- {name:"Terracotta Earrings",category:"Art & Handmade",emoji:"🧡",owner:"Ms Shagufta",desc:"Terracotta jewellery with a handcrafted, earthy character.",subs:[
-  ["Terracotta earrings","🧡","Handcrafted earrings made in terracotta style."],["Designs & patterns","🎨","Browse the different designs available at the stall."],["Gift ideas","🎁","A handmade accessory option for gifting."]]},
- {name:"Gulkand & Amla Achar",category:"Food & Natural Products",emoji:"🫙",owner:"Ms Snigdha Mendiratta",desc:"Traditional flavours presented at the exhibition.",subs:[
-  ["Gulkand","🌹","A traditional rose-petal preserve."],["Amla achar","🫙","Amla pickle featured at the stall."],["Pack sizes & prices","🏷️","Confirm available sizes and prices at the stall."]]},
- {name:"Ethereal Glow Candles",category:"Art & Handmade",emoji:"🕯️",owner:"Ms Vibha Paliwal",desc:"“A little glow, a lot of magic.” Distinctive candles for warm spaces and thoughtful gifting.",subs:[
-  ["Decorative candles","🕯️","Candles designed to add warmth and atmosphere."],["Gifting candles","🎁","Candles to make gifts more personal."],["Sustainable choices","🌍","The stall highlights SDGs 5, 8 and 12."]]},
- {name:"Edible Products",category:"Food & Natural Products",emoji:"🍬",owner:"Ms Barkha",desc:"A variety of edible treats and preserves. Availability and prices to be confirmed at the stall.",subs:[
-  ["Gulkand","🌹","A sweet rose-petal preserve; availability to be confirmed."],["Toffees","🍬","Sweet treats for visitors."],["Cookies","🍪","Cookies available at the edible-products stall."],["Papaya tutti-frutti","🍈","Colourful papaya tutti-frutti."],["Amla pickle","🫙","A tangy preserve made with amla."],["Other edible products","🛍️","Additional products as displayed at the stall."]]},
- {name:"Upcycled Uniform Products",category:"Eco-friendly & Nature",emoji:"♻️",owner:"Ms Ancy Joseph & Ms Anjali",desc:"Products made from old uniforms, giving used materials a new purpose.",subs:[
-  ["Upcycled accessories","🧵","Accessories made by reusing uniform fabric."],["Reusable items","♻️","Useful items created with a reuse-first approach."],["Sustainable design","🌱","See how old textiles can be transformed into new products."]]},
- {name:"Bookmarks & Cards",category:"Art & Handmade",emoji:"💌",owner:"Ms Moumita",desc:"Creative bookmarks and cards for reading, notes and gifting.",subs:[
-  ["Bookmarks","🔖","Creative companions for books and reading."],["Greeting cards","💌","Cards for sharing messages and greetings."],["Handmade stationery","✂️","Paper-based creations made with care."]]},
- {name:"Sculptures",category:"Art & Handmade",emoji:"🗿",owner:"Mr Rao",desc:"Sculptural works presented as part of the exhibition.",subs:[
-  ["Sculptures","🗿","Three-dimensional artworks on display."],["Form & material","🪨","Explore shape, form and material in sculpture."],["Artistic inspiration","💡","Discover the ideas behind the displayed works."]]},
- {name:"Photobooth",category:"Experiences",emoji:"📸",owner:"Ms Geeta Kohli",desc:"Capture a memorable moment from the Founder’s Exhibition.",subs:[
-  ["Photo moments","📸","Take a keepsake photograph at the exhibition."],["Friends & family","👨‍👩‍👧","Create a shared memory with your group."],["Exhibition keepsake","✨","Remember your visit with a photo."]]},
- {name:"Sankalp",category:"Experiences",emoji:"🤝",owner:"Ms Caroline & Ms Avani",desc:"Explore the Sankalp stall and its initiative.",subs:[
-  ["Sankalp initiative","🤝","Learn about the initiative presented at this stall."],["Activities & displays","🌟","Explore the displays and activities available."],["Learn more","💬","Connect with the stall team for further details."]]},
- {name:"SKV Merchandise",category:"School Merchandise",emoji:"🎒",owner:"Ms Santosh & Mr Arun",desc:"Merchandise celebrating the SKV community.",subs:[
-  ["School merchandise","🎒","Browse SKV-themed merchandise available at the stall."],["Keepsakes","🎁","Items to remember the SKV community."],["Available designs","🛍️","Ask the stall team about designs and prices."]]},
- {name:"SKV Pop Up — Whispers of Cocoa",category:"Food & Café",emoji:"🍫",owner:"Ms Abha Virat · Chip n Cheese SKV Culinary Club",desc:"Whispers of Cocoa and much more from the SKV Culinary Club.",subs:[
-  ["Dry-fruit chocolate bites","🍫","Chocolate bites with dry fruits."],["Blueberry chocolate bites","🫐","Chocolate bites with blueberry flavour."],["Double chocolate-chip cookie","🍪","A cookie for chocolate lovers."],["Walnut brownie cup","🍮","A brownie cup with walnut."],["Blueberry cheesecake","🫐","A blueberry cheesecake treat."],["Tangy Trio cup pastry","🧁","A cup pastry listed on the menu."],["Chicken hot dog","🌭","A savoury hot dog option."],["Veg crunchy burger","🍔","A crunchy vegetarian burger."],["Peri-peri hot crispy fries","🍟","Crispy fries with peri-peri seasoning."],["Kokum Fizz mocktail","🥤","A refreshing kokum-based mocktail."]]},
- {name:"Robotics Exhibition",category:"Science & Innovation",emoji:"🤖",owner:"Ms Medha & Ms Nidhi Saraswat",desc:"Explore robotics projects and demonstrations showcasing technology and innovation.",subs:[
-  ["Agrobot","🌱","A robotics project connected with agriculture and smart growing."],["Sanjivani Battle","🤖","A robotics challenge or battle display; project details can be added by the team."],["Robotics projects","⚙️","Explore the robots and prototypes displayed by students."],["Sensors & automation","📡","See how sensors and automated actions can be used in projects."],["Coding & control","💻","Discover the code and control systems behind the demonstrations."]]},
- {name:"Compost",category:"Eco-friendly & Nature",emoji:"🌱",owner:"Ms Meenakshi Dixit",desc:"Discover composting and ways to turn organic waste into a useful resource.",subs:[
-  ["Composting","🌱","Learn how organic waste can break down into compost."],["Kitchen-waste reuse","🥬","Explore ways to divert suitable organic waste from rubbish."],["Soil health","🪴","Discover the role of compost in enriching soil."]]},
- {name:"Permaculture & Bee-Keeping",category:"Eco-friendly & Nature",emoji:"🐝",owner:"Ms Minakshi Dixit & Ms Snigdha Mendiratta",desc:"Explore permaculture and bee-keeping and their relationship with nature.",subs:[
-  ["Permaculture","🌿","Explore nature-inspired approaches to growing and land care."],["Bee-keeping","🐝","Learn about bees and bee-keeping."],["Pollination & biodiversity","🌼","Discover the role of pollinators in ecosystems."]]},
- {name:"Decorated Diyas & Crochet Treasures",category:"Art & Handmade",emoji:"🪔",owner:"Ms Pratibha Sobhani",desc:"“Light Up Your Life with Handmade Love” — decorated diyas and crochet treasures.",subs:[
-  ["Decorated diyas","🪔","Hand-decorated diyas for festive décor and gifting."],["Crochet items","🧶","Handmade crochet creations."],["Handmade gifts","🎁","Thoughtful gifts made with handmade care."]]},
- {name:"Science Exhibition",category:"Science & Innovation",emoji:"🔬",owner:"Mr Pandi & Science Department",desc:"Discover science exhibits and demonstrations prepared for the exhibition.",subs:[
-  ["Science models","🔬","Explore models that demonstrate scientific concepts."],["Experiments & demonstrations","🧪","See science concepts brought to life through demonstrations."],["Student innovations","💡","Discover student ideas and project work."]]}
+  {
+    imageFolder: "stall-1",
+    name: "Home Science",
+    stallImage: "stall-1.jpg",
+    venue: "Near Home Science Lab",
+    category: "Creative Expressions",
+    owner: "Ms. Shweta Choudhary",
+    desc: "Hand crafted Home decore items and Dupattas",
+    subs: [
+      {
+        name: "Dupattas : Block Printed",
+        image: "substall-1.jpg",
+        desc: ""
+      },
+      {
+        name: "Cushion Cover and Centre Runners :  Tie and dyed",
+        image: "substall-2.jpg",
+        desc: ""
+      },
+      {
+        name: "T-shirt s& Tot Bags",
+        image: "substall-3.jpg",
+        desc: ""
+      },
+      {
+        name: "Cushion Cover : Batik Print",
+        image: "substall-4.jpg",
+        desc: ""
+      },
+      {
+        name: "Crochet flowers and mats",
+        image: "substall-5.jpg",
+        desc: ""
+      },
+      {
+        name: "Cushion Cover : Needle Punch art",
+        image: "substall-6.jpg",
+        desc: ""
+      },
+      {
+        name: "Crochet wall hangings",
+        image: "substall-7.jpg",
+        desc: ""
+      },
+      {
+        name: "Pearl art wall pieces",
+        image: "substall-8.jpg",
+        desc: ""
+      },
+      {
+        name: "Table mats by Kasuti embroidery & architectural embroidery",
+        image: "substall-9.jpg",
+        desc: ""
+      }
+    ]
+  },
+  {
+    imageFolder: "stall-2",
+    name: "Paintings",
+    stallImage: "stall-2.jpg",
+    venue: "Class 6B",
+    category: "Creative Expressions",
+    owner: "Ms. Kalpana Sharma",
+    desc: "Painting Theme : Unity in diversity, space travel, peaceful coexistence with nature",
+    subs: [
+      {
+        name: "Acrylic on canvas",
+        image: "substall-1.jpg",
+        desc: ""
+      },
+      {
+        name: "Oil on canvas",
+        image: "substall-2.jpg",
+        desc: ""
+      },
+      {
+        name: "Charcoal paintings",
+        image: "substall-3.jpg",
+        desc: ""
+      },
+      {
+        name: "Mandala art",
+        image: "substall-4.jpg",
+        desc: ""
+      },
+      {
+        name: "Portraits in charcoal and acrylic",
+        image: "substall-5.jpg",
+        desc: ""
+      },
+      {
+        name: "Glass painting",
+        image: "substall-6.jpg",
+        desc: ""
+      },
+      {
+        name: "Texture art",
+        image: "substall-7.jpg",
+        desc: ""
+      },
+      {
+        name: "Pencil shading",
+        image: "substall-8.jpg",
+        desc: ""
+      },
+      {
+        name: "Pen and ink artworks",
+        image: "substall-9.jpg",
+        desc: ""
+      },
+      {
+        name: "File cover decoration",
+        image: "substall-10.jpg",
+        desc: ""
+      }
+    ]
+  },
+  {
+    imageFolder: "stall-3",
+    name: "Organic Products",
+    stallImage: "stall-3.jpg",
+    venue: "Organic Farms",
+    category: "Nature, Agriculture & Sustainability",
+    owner: "Ms. Ancy Joseph",
+    desc: "Go green with SKV Organic farm",
+    subs: [
+      {
+        name: "Sarson ki saag",
+        image: "substall-1.jpg",
+        desc: "20 bunches; ₹40/bunch"
+      },
+      {
+        name: "Spinach",
+        image: "substall-2.jpg",
+        desc: "25 bunches; ₹40/bunch"
+      },
+      {
+        name: "Methi leaves",
+        image: "substall-3.jpg",
+        desc: "25 bunches; ₹50/bunch"
+      },
+      {
+        name: "Lemon grass",
+        image: "substall-4.jpg",
+        desc: "10 bunches; ₹50/bunch"
+      },
+      {
+        name: "Gooseberry",
+        image: "substall-5.jpg",
+        desc: "5 kg; ₹60/kg"
+      },
+      {
+        name: "Arbi",
+        image: "substall-6.jpg",
+        desc: "25 kg; ₹80/kg"
+      },
+      {
+        name: "Raw turmeric",
+        image: "substall-7.jpg",
+        desc: "1 kg; ₹20/250 g"
+      },
+      {
+        name: "Purple yam",
+        image: "substall-8.jpg",
+        desc: "1 kg; ₹50/kg"
+      },
+      {
+        name: "Spring onion",
+        image: "substall-9.jpg",
+        desc: "5 bundles; ₹20/bundle"
+      },
+      {
+        name: "Raw tamarind",
+        image: "substall-10.jpg",
+        desc: "6 packets; ₹20/packet"
+      },
+      {
+        name: "Betel leaves",
+        image: "substall-11.jpg",
+        desc: "10 bunches; 4 leaves per bunch; ₹20/bunch"
+      }
+    ]
+  },
+  {
+    imageFolder: "stall-4",
+    name: "Candles",
+    stallImage: "stall-4.jpg",
+    venue: "Near Class IX",
+    category: "Creative Expressions",
+    owner: "Ms Vibha Paliwal",
+    desc: "ETHEREAL GLOW — A little glow, a lot of magic",
+    subs: [
+      {
+        name: "Big bubble candle",
+        image: "substall-1.jpg",
+        desc: ""
+      },
+      {
+        name: "Small bubble candle",
+        image: "substall-2.jpg",
+        desc: ""
+      },
+      {
+        name: "Lotus candle",
+        image: "substall-3.jpg",
+        desc: ""
+      },
+      {
+        name: "Cake candle",
+        image: "substall-4.jpg",
+        desc: ""
+      },
+      {
+        name: "Modak candle",
+        image: "substall-5.jpg",
+        desc: ""
+      },
+      {
+        name: "Gel wax glass candle",
+        image: "substall-6.jpg",
+        desc: ""
+      },
+      {
+        name: "Glass candle",
+        image: "substall-7.jpg",
+        desc: ""
+      }
+    ]
+  },
+  {
+    imageFolder: "stall-5",
+    name: "Products from Old Uniforms",
+    stallImage: "stall-5.jpg",
+    venue: "Madhav Bhavan Inner Courtyard",
+    category: "Creative Expressions",
+    owner: "Ms Ancy Joseph and Ms Anjali Sharma",
+    desc: "Yasindia",
+    subs: [
+      {
+        name: "Emoji keychains",
+        image: "substall-1.jpg",
+        desc: ""
+      },
+      {
+        name: "Heart keychains",
+        image: "substall-2.jpg",
+        desc: ""
+      },
+      {
+        name: "Mini pouch keychains",
+        image: "substall-3.jpg",
+        desc: ""
+      },
+      {
+        name: "Medium-size pouches",
+        image: "substall-4.jpg",
+        desc: ""
+      },
+      {
+        name: "Mobile pouches",
+        image: "substall-5.jpg",
+        desc: ""
+      },
+      {
+        name: "Rangoli (set)",
+        image: "substall-6.jpg",
+        desc: ""
+      },
+      {
+        name: "Book covers",
+        image: "substall-7.jpg",
+        desc: ""
+      },
+      {
+        name: "Card mini pouches",
+        image: "substall-8.jpg",
+        desc: ""
+      },
+      {
+        name: "Napkin pouch",
+        image: "substall-9.jpg",
+        desc: ""
+      },
+      {
+        name: "Brush pen holders",
+        image: "substall-10.jpg",
+        desc: ""
+      },
+      {
+        name: "Hand bags",
+        image: "substall-11.jpg",
+        desc: ""
+      },
+      {
+        name: "Organiser box",
+        image: "substall-12.jpg",
+        desc: ""
+      },
+      {
+        name: "Wall hanging (flower)",
+        image: "substall-13.jpg",
+        desc: ""
+      },
+      {
+        name: "Minion soft toy",
+        image: "substall-14.jpg",
+        desc: ""
+      },
+      {
+        name: "Skirt",
+        image: "substall-15.jpg",
+        desc: ""
+      },
+      {
+        name: "Tote bag",
+        image: "substall-16.jpg",
+        desc: ""
+      }
+    ]
+  },
+  {
+    imageFolder: "stall-6",
+    name: "Chip n Cheese SKV Culinary Club",
+    stallImage: "stall-6.jpg",
+    venue: "Home Science Lab",
+    category: "Food & Culinary Arts",
+    owner: "Ms Abha Virat",
+    desc: "Whispers of Cocoa & much more",
+    subs: [
+      {
+        name: "Dry fruit choco bites",
+        image: "substall-1.jpg",
+        desc: ""
+      },
+      {
+        name: "Blue berry choco bites",
+        image: "substall-2.jpg",
+        desc: ""
+      },
+      {
+        name: "Double choco chip cookie",
+        image: "substall-3.jpg",
+        desc: ""
+      },
+      {
+        name: "Walnut brownie cup",
+        image: "substall-4.jpg",
+        desc: ""
+      },
+      {
+        name: "Blue berry cheese cake",
+        image: "substall-5.jpg",
+        desc: ""
+      },
+      {
+        name: "Tangy Trio cup pastry",
+        image: "substall-6.jpg",
+        desc: ""
+      },
+      {
+        name: "Chicken hot dog",
+        image: "substall-7.jpg",
+        desc: ""
+      },
+      {
+        name: "Veg crunchy burger",
+        image: "substall-8.jpg",
+        desc: ""
+      },
+      {
+        name: "Peri peri hot crispy fries",
+        image: "substall-9.jpg",
+        desc: ""
+      },
+      {
+        name: "Kokum fizz mocktail",
+        image: "substall-10.jpg",
+        desc: ""
+      }
+    ]
+  },
+  {
+    imageFolder: "stall-7",
+    name: "Decorated Diyas and Crochet Items",
+    stallImage: "stall-7.jpg",
+    venue: "Madhav Bhavan Inner Courtyard",
+    category: "Creative Expressions",
+    owner: "Ms Pratibha Sobhani",
+    desc: "Light Up Your Life with Handmade Love — Decorated Diyas & Crochet Treasures!",
+    subs: [
+      {
+        name: "Decorated diyas",
+        image: "substall-1.jpg",
+        desc: ""
+      },
+      {
+        name: "Crochet items",
+        image: "substall-2.jpg",
+        desc: ""
+      }
+    ]
+  },
+  {
+    imageFolder: "stall-8",
+    name: "Plant Saplings",
+    stallImage: "stall-8.jpg",
+    venue: "Madhav Bhavan Inner Courtyard",
+    category: "Nature, Agriculture & Sustainability",
+    owner: "Ms Ranjana Pathak, Ms Minakshi Iyer and Ms Pratibha Sobhani",
+    desc: "Kaushal Bodh Plant Saplings",
+    subs: [
+      {
+        name: "Rose, betel, tulsi and soybean saplings",
+        image: "substall-1.jpg",
+        desc: ""
+      }
+    ]
+  },
+  {
+    imageFolder: "stall-9",
+    name: "Edible Products",
+    stallImage: "stall-9.jpg",
+    venue: "Inner Courtyard",
+    category: "Nature, Agriculture & Sustainability",
+    owner: "Ms Barkha Kumpawat & Ms. Snigdha Mendiratta",
+    desc: "Amla pickle, papaya tutti frutti, etc.",
+    subs: [
+      {
+        name: "Pickles",
+        image: "substall-1.jpg",
+        desc: "Amla pickle, papaya tutti frutti, etc."
+      },
+     {
+        name: "Gulkand",
+        image: "substall-2.jpg",
+        desc: "Gulkand"
+      } 
+
+    ]
+  },
+  {
+    imageFolder: "stall-10",
+    name: "Bookmarks and Cards",
+    stallImage: "stall-10.jpg",
+    venue: "Madhav Bhavan Inner Courtyard",
+    category: "Creative Expressions",
+    owner: "Ms Moumita Singharoy",
+    desc: "Bookmarks and cards",
+    subs: [
+      {
+        name: "Bookmarks and cards",
+        image: "substall-1.jpg",
+        desc: ""
+      }
+    ]
+  },
+  {
+    imageFolder: "stall-11",
+    name: "Sculptures",
+    stallImage: "stall-11.jpg",
+    venue: "Madhav Bhavan Inner Courtyard",
+    category: "Creative Expressions",
+    owner: "Mr B. Rao",
+    desc: "Sculptures",
+    subs: [
+      {
+        name: "Sculptures",
+        image: "substall-1.jpg",
+        desc: ""
+      }
+    ]
+  },
+  {
+    imageFolder: "stall-12",
+    name: "Photobooth",
+    stallImage: "stall-12.jpg",
+    venue: "Madhav Bhavan Inner Courtyard",
+    category: "Experiences & School Identity",
+    owner: "Ms Geeta Kohli",
+    desc: "Photobooth",
+    subs: [
+      {
+        name: "Photobooth",
+        image: "substall-1.jpg",
+        desc: ""
+      }
+    ]
+  },
+  {
+    imageFolder: "stall-13",
+    name: "Sankalp",
+    stallImage: "stall-13.jpg",
+    venue: "Madhav Bhavan Inner Courtyard",
+    category: "Nature, Agriculture & Sustainability",
+    owner: "Ms Caroline Shahji and Ms Avani Singh",
+    desc: "Sankalp",
+    subs: [
+      {
+        name: "Sankalp",
+        image: "substall-1.jpg",
+        desc: ""
+      }
+    ]
+  },
+  {
+    imageFolder: "stall-14",
+    name: "SKV Merchandise",
+    stallImage: "stall-14.jpg",
+    venue: "Madhav Bhavan Inner Courtyard",
+    category: "Experiences & School Identity",
+    owner: "Ms Santosh Kumar and Mr Arun Dixit",
+    desc: "SKV Merchandise",
+    subs: [
+      {
+        name: "SKV Merchandise",
+        image: "substall-1.jpg",
+        desc: ""
+      }
+    ]
+  },
+  {
+    imageFolder: "stall-15",
+    name: "Bio Enzymes",
+    stallImage: "stall-15.jpg",
+    venue: "Madhav Bhavan Inner Courtyard",
+    category: "Nature, Agriculture & Sustainability",
+    owner: "Ms Vaishali Shrivastava",
+    desc: "From peel to purpose: Turning citrus waste into eco-friendly solutions",
+    subs: [
+      {
+        name: "eco-friendly",
+        image: "substall-1.jpg",
+        desc: ""
+      }
+    ]
+  },
+  {
+    imageFolder: "stall-16",
+    name: "Exhibitions : Robotics",
+    stallImage: "stall-16.jpg",
+    venue: "Skating Ring",
+    category: "Innovation, Robotics & Science",
+    owner: "Ms. Medha & Ms. Nidhi Sharma",
+    desc: "Innovative projects",
+    subs: [
+      {
+        name: "Sanrakshak Agribot",
+        image: "substall-1.jpg",
+        desc: "An intelligent agricultural robot designed to monitor soil conditions and support efficient farming. It helps farmers improve crop health and optimise water usage."
+      },
+      {
+        name: "Sanjeevani Battle Shield",
+        image: "substall-2.jpg",
+        desc: "An AI-based intelligent defence and emergency response system designed to assist soldiers in hazardous situations. It aims to improve battlefield safety and support timely emergency assistance."
+      },
+      {
+        name: "FestiGuard",
+        image: "substall-3.jpg",
+        desc: "A smart safety and crowd-monitoring system designed to improve security during festivals and public gatherings. It helps identify potential risks and supports faster emergency response."
+      },
+      {
+        name: "Forest Surveillance Through Drone",
+        image: "substall-4.jpg",
+        desc: "A drone-based surveillance system designed to monitor forests, detect potential fire risks, and identify suspicious activities. It helps capture aerial images and supports forest protection."
+      },
+      {
+        name: "Weight Monitoring Machine",
+        image: "substall-5.jpg",
+        desc: "A smart weighing system that measures and displays a person's weight digitally. It can record readings over time to help monitor weight changes."
+      },
+      {
+        name: "Emergency Black Box",
+        image: "substall-6.jpg",
+        desc: "A safety device designed to record important information during emergencies or accidents. It can help preserve critical data for later investigation and analysis."
+      },
+      {
+        name: "Noise Controller",
+        image: "substall-7.jpg",
+        desc: "A smart noise-monitoring system that measures surrounding sound levels and identifies excessive noise. It can provide alerts when noise exceeds a predefined limit."
+      },
+      {
+        name: "Screen Time App",
+        image: "substall-8.jpg",
+        desc: "An application designed to monitor device usage and screen time. It helps users track their digital habits and encourages healthier screen-time management."
+      }
+    ]
+  },
+  {
+    imageFolder: "stall-17",
+    name: "Exhibition : Science",
+    stallImage: "stall-17.jpg",
+    venue: "Skating Ring",
+    category: "Innovation, Robotics & Science",
+    owner: "Science Department",
+    desc: "Innovative projects",
+    subs: [
+      {
+        name: "Physics",
+        image: "substall-1.jpg",
+        desc: ""
+      },
+      {
+        name: "Chemistry",
+        image: "substall-2.jpg",
+        desc: ""
+      },
+      {
+        name: "Biology",
+        image: "substall-3.jpg",
+        desc: ""
+      }
+    ]
+  },
+  {
+    imageFolder: "stall-18",
+    name: "Carnival",
+    stallImage: "stall-18.jpg",
+    venue: "Madhav Bhavan Inner Courtyard",
+    category: "Exhibition Stalls",
+    owner: "Ms. Kavita Pillai , Mr. Anurag Bansal , Mr. Vaibhav Bhagat",
+    desc: "Innovative projects",
+    subs: [
+      {
+        name: "Dance",
+        image: "substall-1.jpg",
+        desc: ""
+      },
+      {
+        name: "Music",
+        image: "substall-2.jpg",
+        desc: ""
+      }
+    ]
+  }
 ];
-const homeView=document.getElementById('homeView'),detailView=document.getElementById('detailView'),stallGrid=document.getElementById('stallGrid'),subGrid=document.getElementById('subGrid'),search=document.getElementById('search'),categoryFilter=document.getElementById('categoryFilter');
-let activeStall=null;
-[...new Set(stalls.map(s=>s.category))].sort().forEach(c=>{const opt=document.createElement('option');opt.value=c;opt.textContent=c;categoryFilter.appendChild(opt)});
+
+function slugify(value){
+ return String(value||'').toLowerCase().normalize('NFD')
+  .replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+}
+function normalizeSub(item){
+ if(Array.isArray(item)) return {name:item[0]||'Item',desc:item[2]||'',image:''};
+ return {name:item.name||'Item',desc:item.desc||'',image:item.image||''};
+}
+function addPhoto(container,path,alt){
+ const img=document.createElement('img');img.className='stall-photo';img.alt=alt||'';img.loading='lazy';
+ const candidates=[path,path.replace(/\.jpg$/i,'.JPG'),path.replace(/\.jpg$/i,'.jpeg'),path.replace(/\.jpg$/i,'.JPEG'),path.replace(/\.jpg$/i,'.png'),path.replace(/\.jpg$/i,'.PNG')];
+ let attempt=0;
+ img.onerror=function(){attempt++;if(attempt<candidates.length){img.src=candidates[attempt];}else{img.hidden=true;}};
+ img.onload=function(){img.hidden=false;};img.src=candidates[0];container.prepend(img);return img;
+}
+function getStallImage(stall){return 'images/stalls/'+(stall.stallImage||slugify(stall.name)+'.jpg');}
 function makeTile(stall){
  const el=document.createElement('article');el.className='tile';
- el.innerHTML=`<div class="tile-art"><span class="emoji">${stall.emoji}</span></div><div class="tile-body"><div class="eyebrow">${stall.category}</div><h3>${stall.name}</h3><p>${stall.desc}</p><button class="open-btn" type="button">Explore stall →</button></div>`;
- el.querySelector('button').addEventListener('click',()=>openStall(stall.name));el.addEventListener('dblclick',()=>openStall(stall.name));return el;
+ el.innerHTML=`<div class="tile-art"></div><div class="tile-body"><div class="eyebrow"></div><h3></h3><p class="stall-desc"></p><p class="stall-owner"></p><p class="stall-venue"></p><button class="open-btn" type="button">Explore stall →</button></div>`;
+ el.querySelector('.eyebrow').textContent=stall.category||'';
+ el.querySelector('h3').textContent=stall.name;
+ el.querySelector('.stall-desc').textContent=stall.desc||'';
+ el.querySelector('.stall-owner').textContent='In-charge: '+(stall.owner||'To be confirmed');
+ el.querySelector('.stall-venue').textContent='Venue: '+(stall.venue||'To be confirmed');
+ addPhoto(el.querySelector('.tile-art'),getStallImage(stall),stall.name);
+ el.querySelector('button').addEventListener('click',()=>openStall(stall.name));
+ return el;
 }
 function renderHome(){
  const q=search.value.trim().toLowerCase(),cat=categoryFilter.value;
- const shown=stalls.filter(s=>(cat==='all'||s.category===cat)&&[s.name,s.category,s.owner,s.desc,...s.subs.map(x=>x[0]+' '+x[2])].join(' ').toLowerCase().includes(q));
- stallGrid.innerHTML='';shown.forEach(s=>stallGrid.appendChild(makeTile(s)));
+ const shown=stalls.filter(stall=>{
+  const subText=(stall.subs||[]).map(item=>{const x=normalizeSub(item);return x.name+' '+x.desc;});
+  return (cat==='all'||stall.category===cat)&&[stall.name,stall.category,stall.owner,stall.desc,...subText].join(' ').toLowerCase().includes(q);
+ });
+ stallGrid.innerHTML='';shown.forEach(stall=>stallGrid.appendChild(makeTile(stall)));
  document.getElementById('homeCount').textContent=`${shown.length} stalls · Select any stall tile to open its subcategories.`;
  if(!shown.length)stallGrid.innerHTML='<div class="empty">No stalls match your search. Try another keyword or category.</div>';
 }
+function makeSubTile(stall,item){
+ const sub=normalizeSub(item),tile=document.createElement('article');tile.className='sub-tile';
+ tile.innerHTML=`<div class="sub-art"></div><div class="sub-body"><h3></h3><p></p><div class="reaction-buttons"><button type="button" class="reaction-btn" data-vote="like" aria-pressed="false">Like <span>0</span></button><button type="button" class="reaction-btn" data-vote="dislike" aria-pressed="false">Dislike <span>0</span></button></div></div>`;
+ tile.querySelector('h3').textContent=sub.name;
+ tile.querySelector('.sub-body p').textContent=sub.desc;
+const imagePath = sub.image
+  ? (
+      sub.image.startsWith("images/")
+        ? sub.image
+        : "images/subcategories/" +
+          (stall.imageFolder || slugify(stall.name)) + "/" +
+          sub.image
+    )
+  : "images/subcategories/" +
+    (stall.imageFolder || slugify(stall.name)) + "/" +
+    slugify(sub.name) + ".jpg";
+
+addPhoto(
+  tile.querySelector(".sub-art"),
+  imagePath,
+  sub.name
+);
+ 
+ /*
+ const imagePath = sub.image
+   ? (sub.image.startsWith('images/') ? sub.image : 'images/subcategories/'+slugify(stall.name)+'/'+sub.image)
+   : 'images/subcategories/'+slugify(stall.name)+'/'+slugify(sub.name)+'.jpg';
+ addPhoto(tile.querySelector('.sub-art'),imagePath,sub.name);
+ */
+ setupReactions(tile,stall.name,sub.name);
+ 
+ return tile;
+}
+function setupReactions(tile,stallName,itemName){
+ const key='skv-exhibition-reaction:'+slugify(stallName)+':'+slugify(itemName);
+ const likeBtn=tile.querySelector('[data-vote="like"]'),dislikeBtn=tile.querySelector('[data-vote="dislike"]');
+ function read(){try{return JSON.parse(localStorage.getItem(key)||'{"like":0,"dislike":0,"selected":""}')}catch(e){return {like:0,dislike:0,selected:''}}}
+ function paint(){const v=read();likeBtn.querySelector('span').textContent=v.like;dislikeBtn.querySelector('span').textContent=v.dislike;likeBtn.classList.toggle('liked',v.selected==='like');dislikeBtn.classList.toggle('disliked',v.selected==='dislike');likeBtn.setAttribute('aria-pressed',String(v.selected==='like'));dislikeBtn.setAttribute('aria-pressed',String(v.selected==='dislike'));}
+ function vote(type){const v=read();if(v.selected===type){v[type]=Math.max(0,v[type]-1);v.selected='';}else{if(v.selected)v[v.selected]=Math.max(0,v[v.selected]-1);v[type]++;v.selected=type;}try{localStorage.setItem(key,JSON.stringify(v));}catch(e){}paint();}
+ likeBtn.addEventListener('click',()=>vote('like'));dislikeBtn.addEventListener('click',()=>vote('dislike'));paint();
+}
 function openStall(name){
- activeStall=stalls.find(s=>s.name===name);if(!activeStall)return;
+ activeStall=stalls.find(stall=>stall.name===name);if(!activeStall)return;
  homeView.classList.add('hidden');detailView.classList.remove('hidden');
  document.getElementById('detailHeading').textContent=activeStall.name;
- document.getElementById('detailIntro').textContent=activeStall.desc;
- document.getElementById('detailEmoji').textContent=activeStall.emoji;
+ document.getElementById('detailIntro').textContent=activeStall.desc||'Choose a subcategory to explore.';
+ document.getElementById('detailEmoji').textContent='';
+ const detailArt=document.getElementById('detailArt');detailArt.querySelectorAll('.stall-photo').forEach(img=>img.remove());
+ addPhoto(detailArt,getStallImage(activeStall),activeStall.name);
  document.getElementById('detailName').textContent=activeStall.name;
- document.getElementById('detailOwner').textContent='Presented by: '+activeStall.owner;
- document.getElementById('detailVenue').textContent='Venue: To be confirmed';
- subGrid.innerHTML='';
- activeStall.subs.forEach(([name,emoji,desc])=>{
-  const tile=document.createElement('article');tile.className='sub-tile';
-  tile.innerHTML=`<div class="sub-art" aria-hidden="true">${emoji}</div><div class="sub-body"><h3>${name}</h3><p>${desc}</p></div>`;
-  subGrid.appendChild(tile);
- });
+ document.getElementById('detailOwner').textContent='In-charge: '+(activeStall.owner||'To be confirmed');
+ document.getElementById('detailVenue').textContent='Venue: '+(activeStall.venue || 'To be confirmed');
+ subGrid.innerHTML='';(activeStall.subs||[]).forEach(item=>subGrid.appendChild(makeSubTile(activeStall,item)));
  window.scrollTo({top:0,behavior:'smooth'});
- if(history.pushState)history.pushState({stall:name},'', '#stall-'+encodeURIComponent(name.toLowerCase().replace(/[^a-z0-9]+/g,'-')));
+ if(history.pushState)history.pushState({stall:name},'','#stall-'+slugify(name));
 }
-function showHome(){
- detailView.classList.add('hidden');homeView.classList.remove('hidden');activeStall=null;
- if(location.hash.startsWith('#stall-'))history.replaceState({},'',location.pathname+location.search);
- window.scrollTo({top:0,behavior:'smooth'});
-}
+function showHome(){detailView.classList.add('hidden');homeView.classList.remove('hidden');activeStall=null;if(location.hash.startsWith('#stall-'))history.replaceState({},'',location.pathname+location.search);window.scrollTo({top:0,behavior:'smooth'});}
+[...new Set(stalls.map(stall=>stall.category).filter(Boolean))].sort().forEach(category=>{const option=document.createElement('option');option.value=category;option.textContent=category;categoryFilter.appendChild(option);});
 document.getElementById('backButton').addEventListener('click',showHome);
 search.addEventListener('input',renderHome);categoryFilter.addEventListener('change',renderHome);
-window.addEventListener('popstate',()=>{if(location.hash.startsWith('#stall-')){const slug=location.hash.slice(7);const match=stalls.find(s=>s.name.toLowerCase().replace(/[^a-z0-9]+/g,'-')===decodeURIComponent(slug));if(match)openStall(match.name)}else{detailView.classList.add('hidden');homeView.classList.remove('hidden')}});
+window.addEventListener('popstate',()=>{if(location.hash.startsWith('#stall-')){const slug=decodeURIComponent(location.hash.slice(7));const match=stalls.find(stall=>slugify(stall.name)===slug);if(match){openStall(match.name);return;}}detailView.classList.add('hidden');homeView.classList.remove('hidden');});
 renderHome();
 </script>
 </body>

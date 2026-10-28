@@ -1,0 +1,122 @@
+IMAGE FILE GUIDE
+
+MAIN STALL PHOTOS
+Put each main stall photo in images/stalls/ using these filenames:
+- stall-1.jpg
+- stall-2.jpg
+- stall-3.jpg
+- stall-4.jpg
+- stall-5.jpg
+- stall-6.jpg
+- stall-7.jpg
+- stall-8.jpg
+- stall-9.jpg
+- stall-10.jpg
+
+SUB-STALL PHOTOS
+Each stall gets a separate folder under images/subcategories/:
+- images/subcategories/stall-1/substall-1.jpg
+- images/subcategories/stall-1/substall-2.jpg
+- images/subcategories/stall-1/substall-3.jpg
+- images/subcategories/stall-1/substall-4.jpg
+- images/subcategories/stall-1/substall-5.jpg
+- images/subcategories/stall-1/substall-6.jpg
+- images/subcategories/stall-1/substall-7.jpg
+- images/subcategories/stall-1/substall-8.jpg
+- images/subcategories/stall-1/substall-9.jpg
+- images/subcategories/stall-1/substall-10.jpg
+- images/subcategories/stall-2/substall-1.jpg
+- images/subcategories/stall-2/substall-2.jpg
+- images/subcategories/stall-2/substall-3.jpg
+- images/subcategories/stall-2/substall-4.jpg
+- images/subcategories/stall-2/substall-5.jpg
+- images/subcategories/stall-2/substall-6.jpg
+- images/subcategories/stall-2/substall-7.jpg
+- images/subcategories/stall-2/substall-8.jpg
+- images/subcategories/stall-2/substall-9.jpg
+- images/subcategories/stall-2/substall-10.jpg
+- images/subcategories/stall-3/substall-1.jpg
+- images/subcategories/stall-3/substall-2.jpg
+- images/subcategories/stall-3/substall-3.jpg
+- images/subcategories/stall-3/substall-4.jpg
+- images/subcategories/stall-3/substall-5.jpg
+- images/subcategories/stall-3/substall-6.jpg
+- images/subcategories/stall-3/substall-7.jpg
+- images/subcategories/stall-3/substall-8.jpg
+- images/subcategories/stall-3/substall-9.jpg
+- images/subcategories/stall-3/substall-10.jpg
+- images/subcategories/stall-4/substall-1.jpg
+- images/subcategories/stall-4/substall-2.jpg
+- images/subcategories/stall-4/substall-3.jpg
+- images/subcategories/stall-4/substall-4.jpg
+- images/subcategories/stall-4/substall-5.jpg
+- images/subcategories/stall-4/substall-6.jpg
+- images/subcategories/stall-4/substall-7.jpg
+- images/subcategories/stall-4/substall-8.jpg
+- images/subcategories/stall-4/substall-9.jpg
+- images/subcategories/stall-4/substall-10.jpg
+- images/subcategories/stall-5/substall-1.jpg
+- images/subcategories/stall-5/substall-2.jpg
+- images/subcategories/stall-5/substall-3.jpg
+- images/subcategories/stall-5/substall-4.jpg
+- images/subcategories/stall-5/substall-5.jpg
+- images/subcategories/stall-5/substall-6.jpg
+- images/subcategories/stall-5/substall-7.jpg
+- images/subcategories/stall-5/substall-8.jpg
+- images/subcategories/stall-5/substall-9.jpg
+- images/subcategories/stall-5/substall-10.jpg
+- images/subcategories/stall-6/substall-1.jpg
+- images/subcategories/stall-6/substall-2.jpg
+- images/subcategories/stall-6/substall-3.jpg
+- images/subcategories/stall-6/substall-4.jpg
+- images/subcategories/stall-6/substall-5.jpg
+- images/subcategories/stall-6/substall-6.jpg
+- images/subcategories/stall-6/substall-7.jpg
+- images/subcategories/stall-6/substall-8.jpg
+- images/subcategories/stall-6/substall-9.jpg
+- images/subcategories/stall-6/substall-10.jpg
+- images/subcategories/stall-7/substall-1.jpg
+- images/subcategories/stall-7/substall-2.jpg
+- images/subcategories/stall-7/substall-3.jpg
+- images/subcategories/stall-7/substall-4.jpg
+- images/subcategories/stall-7/substall-5.jpg
+- images/subcategories/stall-7/substall-6.jpg
+- images/subcategories/stall-7/substall-7.jpg
+- images/subcategories/stall-7/substall-8.jpg
+- images/subcategories/stall-7/substall-9.jpg
+- images/subcategories/stall-7/substall-10.jpg
+- images/subcategories/stall-8/substall-1.jpg
+- images/subcategories/stall-8/substall-2.jpg
+- images/subcategories/stall-8/substall-3.jpg
+- images/subcategories/stall-8/substall-4.jpg
+- images/subcategories/stall-8/substall-5.jpg
+- images/subcategories/stall-8/substall-6.jpg
+- images/subcategories/stall-8/substall-7.jpg
+- images/subcategories/stall-8/substall-8.jpg
+- images/subcategories/stall-8/substall-9.jpg
+- images/subcategories/stall-8/substall-10.jpg
+- images/subcategories/stall-9/substall-1.jpg
+- images/subcategories/stall-9/substall-2.jpg
+- images/subcategories/stall-9/substall-3.jpg
+- images/subcategories/stall-9/substall-4.jpg
+- images/subcategories/stall-9/substall-5.jpg
+- images/subcategories/stall-9/substall-6.jpg
+- images/subcategories/stall-9/substall-7.jpg
+- images/subcategories/stall-9/substall-8.jpg
+- images/subcategories/stall-9/substall-9.jpg
+- images/subcategories/stall-9/substall-10.jpg
+- images/subcategories/stall-10/substall-1.jpg
+- images/subcategories/stall-10/substall-2.jpg
+- images/subcategories/stall-10/substall-3.jpg
+- images/subcategories/stall-10/substall-4.jpg
+- images/subcategories/stall-10/substall-5.jpg
+- images/subcategories/stall-10/substall-6.jpg
+- images/subcategories/stall-10/substall-7.jpg
+- images/subcategories/stall-10/substall-8.jpg
+- images/subcategories/stall-10/substall-9.jpg
+- images/subcategories/stall-10/substall-10.jpg
+
+These are expected filenames. Add your own image files; they are not automatically created by the code.
+
+
+PLACEHOLDER PHOTOS: The supplied fabric-print photograph is copied to all 10 stall JPGs and all 100 sub-stall JPGs. Replace these files later with your own photos, keeping the same filenames. No emoji icons are used in the website.
