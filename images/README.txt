@@ -26,17 +26,17 @@ Stall-2
   substall-10.jpg - File Cover Decoration
 
 Stall-3
-  substall-1.jpg - Sarson ki Saag
-  substall-2.jpg - Spinach
-  substall-3.jpg - Methi Leaves
-  substall-4.jpg - Lemon Grass
-  substall-5.jpg - Gooseberry
-  substall-6.jpg - Arbi
-  substall-7.jpg - Raw Turmeric
-  substall-8.jpg - Purple Yam
-  substall-9.jpg - Spring Onion
-  substall-10.jpg - Raw Tamarind
-  substall-11.jpg - Betel Leaves
+  substall-1.jpg - Fresh Veggie
+  substall-2.jpg - 
+  substall-3.jpg - 
+  substall-4.jpg -
+  substall-5.jpg -
+  substall-6.jpg - 
+  substall-7.jpg - 
+  substall-8.jpg - 
+  substall-9.jpg - 
+  substall-10.jpg -
+  substall-11.jpg - 
 
 Stall-4
   substall-1.jpg - Big Bubble Candle
