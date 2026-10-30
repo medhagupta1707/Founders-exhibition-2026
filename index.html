@@ -99,7 +99,20 @@ border-color: #dc2626;
 color: #991b1b;
 }
 
-	</style>
+	
+/* Click-to-zoom image viewer */
+.stall-photo{cursor:zoom-in;transition:transform .2s ease}
+.stall-photo:hover{filter:brightness(.97)}
+.sub-art.multi-photo{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;padding:10px;align-content:start;overflow:auto}
+.sub-art.multi-photo .stall-photo{position:relative;inset:auto;width:100%;height:210px;min-width:0;object-fit:contain;padding:4px;border-radius:9px;background:#fff;box-shadow:0 2px 9px #10134718}
+.image-lightbox{position:fixed;inset:0;z-index:9999;background:rgba(8,10,30,.94);display:none;align-items:center;justify-content:center;padding:56px 20px 24px}
+.image-lightbox.open{display:flex}
+.image-lightbox img{max-width:min(96vw,1500px);max-height:88vh;object-fit:contain;border-radius:8px;box-shadow:0 12px 50px #0008}
+.lightbox-close{position:absolute;top:14px;right:20px;border:0;border-radius:50%;width:44px;height:44px;background:#fff;color:#17164f;font-size:28px;line-height:1;cursor:pointer}
+.lightbox-caption{position:absolute;bottom:12px;left:16px;right:16px;text-align:center;color:#fff;font-size:.9rem}
+@media(max-width:560px){.sub-art.multi-photo .stall-photo{height:145px}.image-lightbox{padding:55px 10px 35px}}
+
+</style>
 </head>
 <body>
 <header>
@@ -162,6 +175,8 @@ color: #991b1b;
 // 10 stalls × 10 sub-stalls per stall
 // Main photos: images/stalls/stall-1.jpg ... stall-10.jpg
 // Sub-stall photos: images/subcategories/stall-1/substall-1.jpg etc.
+// For multiple photos in one sub-stall card, add: images: ["substall-1.jpg", "substall-1b.jpg"]
+// Keep each extra photo in that stall's images/subcategories/stall-N/ folder.
 // Keep the image filenames and folder names exactly as written.
 // ============================================================
 const stalls = [
@@ -176,7 +191,7 @@ const stalls = [
     subs: [
       {
         name: "Dupattas : Block Printed",
-        image: "substall-1.jpg",
+        image: ["substall-1.jpg", "substall-1-detail.jpg", "substall-1-display.jpg"],
         incharge: "",
         desc: " Following Students Art work is on Display : Rishika Jalan (XI B), Naisha Mittal (XI B), Pragya Rai (XI B), Tanisi Agrawal (XI C), Aashi Goenka (XI C), Raisha Jaiswal (XI B), Anwesha Gupta (XI B), Saakhi Grover (XII B), Saanvi Jaiswal (XI B), Shivi Singh (XI B)"
       },
@@ -187,7 +202,7 @@ const stalls = [
         desc: " Following Students Art work is on Display : Tie and Dyed Cushion Covers - Samriddhi Agrawal (XII B), Aanya Pillai (XII B), Niharika Bose (XII B), Dewangi Nahata (XII B), Suhani Bansal (XII B), Anushka Thakur (XII B) | Block Printed Centre Runners - Arushi Agrawal (XI B), Rishika Jalan (XI B), Satakashi Matanhelia (XII B) | Block Printed Cushion Covers - Rinisha Agrawal (XI B), Mishika Agrawal (XII B), Paridhi Agrawal (XI B)"
       },
       {
-        name: "T-shirt s& Tote Bags",
+        name: "T-shirt s& Tot Bags",
         image: "substall-3.jpg",
         incharge: "",
         desc: " Following Students Art work is on Display : Screen Printed T-shirts - Pragya Rai (XI B), Sirat Bajwa (XI B), Rishika Jalan (XI B) | Screen Printed Tote Bags - Naisha Mittal (XI B), Saanvi Jaiswal (XI B), Pragya Rai (XI B), Rishika Jalan (XI B), Sirat Bajwa (XI B)"
@@ -676,6 +691,7 @@ function normalizeSub(item){
    name:item.name||'Item',
    desc:item.desc||'',
    image:item.image||'',
+   images:Array.isArray(item.images)?item.images:(Array.isArray(item.image)?item.image:[]),
    incharge:item.incharge||''
  };
 }
@@ -685,7 +701,46 @@ function addPhoto(container,path,alt){
  const candidates=[path,path.replace(/\.jpg$/i,'.JPG'),path.replace(/\.jpg$/i,'.jpeg'),path.replace(/\.jpg$/i,'.JPEG'),path.replace(/\.jpg$/i,'.png'),path.replace(/\.jpg$/i,'.PNG')];
  let attempt=0;
  img.onerror=function(){attempt++;if(attempt<candidates.length){img.src=candidates[attempt];}else{img.hidden=true;}};
- img.onload=function(){img.hidden=false;};img.src=candidates[0];container.prepend(img);return img;
+ img.onload=function(){img.hidden=false;};img.src=candidates[0];
+ img.addEventListener('click',()=>openLightbox(img.src,alt||'Exhibition image'));
+ container.prepend(img);return img;
+}
+function resolveSubImagePath(stall,path){
+ if(!path)return '';
+ return path.startsWith('images/')?path:'images/subcategories/'+(stall.imageFolder||slugify(stall.name))+'/'+path;
+}
+function addSubPhotos(container,stall,sub){
+ const paths=(sub.images&&sub.images.length?sub.images:(sub.image?[sub.image]:[])).filter(Boolean);
+ if(paths.length>1)container.classList.add('multi-photo');
+ if(!paths.length){
+   const fallback='images/subcategories/'+(stall.imageFolder||slugify(stall.name))+'/'+slugify(sub.name)+'.jpg';
+   addPhoto(container,fallback,sub.name);return;
+ }
+ paths.forEach((path,index)=>{
+   const img=document.createElement('img');img.className='stall-photo';img.alt=(sub.name||'Sub-stall')+' - image '+(index+1);img.loading='lazy';
+   const fullPath=resolveSubImagePath(stall,path);
+   const candidates=[fullPath,fullPath.replace(/\.jpg$/i,'.JPG'),fullPath.replace(/\.jpg$/i,'.jpeg'),fullPath.replace(/\.jpg$/i,'.JPEG'),fullPath.replace(/\.jpg$/i,'.png'),fullPath.replace(/\.jpg$/i,'.PNG')];
+   let attempt=0;img.onerror=function(){attempt++;if(attempt<candidates.length)img.src=candidates[attempt];else img.hidden=true;};
+   img.addEventListener('click',()=>openLightbox(img.src,img.alt));
+   img.src=candidates[0];container.appendChild(img);
+ });
+}
+let lightboxElement=null;
+function openLightbox(src,caption){
+ if(!src)return;
+ if(!lightboxElement){
+   lightboxElement=document.createElement('div');lightboxElement.className='image-lightbox';lightboxElement.setAttribute('role','dialog');lightboxElement.setAttribute('aria-modal','true');lightboxElement.setAttribute('aria-label','Image preview');
+   lightboxElement.innerHTML='<button type="button" class="lightbox-close" aria-label="Close image preview">×</button><img alt=""><div class="lightbox-caption"></div>';
+   document.body.appendChild(lightboxElement);
+   lightboxElement.addEventListener('click',e=>{if(e.target===lightboxElement||e.target.classList.contains('lightbox-close'))closeLightbox();});
+   document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
+ }
+ const preview=lightboxElement.querySelector('img');preview.src=src;preview.alt=caption||'Exhibition image';
+ lightboxElement.querySelector('.lightbox-caption').textContent=caption||'';
+ lightboxElement.classList.add('open');document.body.style.overflow='hidden';
+}
+function closeLightbox(){
+ if(lightboxElement){lightboxElement.classList.remove('open');document.body.style.overflow='';}
 }
 function getStallImage(stall){return 'images/stalls/'+(stall.stallImage||slugify(stall.name)+'.jpg');}
 function makeTile(stall){
@@ -729,13 +784,7 @@ function makeSubTile(stall,item){
  inchargeElement.hidden=!sub.incharge;
 
  tile.querySelector('.sub-description').textContent=sub.desc;
- const imagePath = sub.image
-   ? (sub.image.startsWith('images/')
-       ? sub.image
-       : 'images/subcategories/'+(stall.imageFolder||slugify(stall.name))+'/'+sub.image)
-   : 'images/subcategories/'+(stall.imageFolder||slugify(stall.name))+'/'+slugify(sub.name)+'.jpg';
-
- addPhoto(tile.querySelector('.sub-art'),imagePath,sub.name);
+ addSubPhotos(tile.querySelector('.sub-art'),stall,sub);
  setupReactions(tile,stall.name,sub.name);
  return tile;
 }
