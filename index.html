@@ -1,777 +1,1531 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <meta name="theme-color" content="#17164f">
+
 <meta name="description" content="Explore the stalls, products and innovations at Scindia Kanya Vidyalaya Founder’s Exhibition 2026 — Imagining Tomorrow.">
+
 <title>Founder’s Exhibition 2026 | Scindia Kanya Vidyalaya</title>
+
 <style>
+
 :root{--navy:#17164f;--blue:#174a7e;--teal:#087d91;--magenta:#b52b83;--pink:#f3b7dd;--paper:#f7f7fb;--ink:#191b28;--muted:#656a7b;--line:#e0e2ed;--white:#fff}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.5}
+
+{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height*:1.5}
+
 header{background:linear-gradient(125deg,var(--navy) 0%,#123f72 34%,var(--teal) 65%,var(--magenta) 100%);color:white;padding:22px clamp(16px,5vw,64px) 36px}
+
 .brand{max-width:1200px;margin:auto;display:flex;align-items:center;gap:22px}
+
 .logo-wrap{width:104px;height:96px;flex:0 0 auto;display:flex;align-items:center;justify-content:center}
+
 .logo-wrap img{max-width:100%;max-height:100%;object-fit:contain}
+
 .school-name{font-weight:800;font-size:clamp(1.7rem,4.3vw,3.1rem);letter-spacing:.045em;line-height:1.08;text-transform:uppercase}
+
 .exhibition-label{margin-top:10px;font-size:clamp(.95rem,2vw,1.2rem);letter-spacing:.18em;text-transform:uppercase;color:#f3b7dd;font-weight:700}
+
 .hero{max-width:1200px;margin:30px auto 0;display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}
+
 .hero h1{font-family:Georgia,serif;font-size:clamp(1.6rem,3vw,2.5rem);font-weight:500;line-height:1.12;margin:0 0 10px}
+
 .hero p{color:#f0f2fa;max-width:650px;margin:0;font-size:1rem}
+
 .hero-image{height:260px;border:1px solid #ffffff55;border-radius:18px;background:#111747 url("scindia-kanya-vidyalaya.jpg") center 44%/cover no-repeat;box-shadow:0 14px 36px #08092e55}
+
 main{max-width:1200px;margin:auto;padding:24px clamp(14px,3vw,28px) 54px}
+
 .toolbar{display:flex;gap:12px;flex-wrap:wrap;background:white;border:1px solid var(--line);padding:13px;border-radius:15px;box-shadow:0 6px 20px #15164f0a}
+
 input,select{font:inherit;border:1px solid #d5d8e5;border-radius:10px;padding:12px 14px;background:white;color:var(--ink);min-width:0}input{flex:1;min-width:200px}
+
 .section-heading{display:flex;align-items:end;justify-content:space-between;gap:15px;margin:28px 0 16px}.section-heading h2{font-family:Georgia,serif;font-size:clamp(1.7rem,3vw,2.3rem);font-weight:500;margin:0;color:var(--navy)}.section-heading p{margin:5px 0 0;color:var(--muted)}
+
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+
 .tile{border:1px solid var(--line);background:white;border-radius:17px;overflow:hidden;display:flex;flex-direction:column;min-width:0;box-shadow:0 5px 22px #1013470a;transition:transform .18s ease,box-shadow .18s ease}
+
 .tile:hover{transform:translateY(-3px);box-shadow:0 12px 28px #10134718}
+
 .tile-art{height:280px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#17164f,#087d91 65%,#b52b83);color:white}
+
 .tile-art:before{content:"";position:absolute;width:180px;height:180px;border:1px solid #ffffff42;border-radius:50%;right:-40px;top:-72px}
+
 .tile-art:after{content:"";position:absolute;width:115px;height:115px;border:1px solid #ffffff42;border-radius:50%;left:-24px;bottom:-56px}
+
 .emoji{font-size:3.5rem;position:relative;z-index:1;filter:drop-shadow(0 4px 6px #0003)}
+
 .photo-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;padding:14px;text-align:center;color:#34375e;background:repeating-linear-gradient(135deg,#f6f7fc,#f6f7fc 12px,#eceefa 12px,#eceefa 24px);z-index:1}
+
 .photo-placeholder .placeholder-icon{font-size:2.5rem;line-height:1;color:#087d91}
+
 .photo-placeholder strong{font-size:.95rem}
+
 .photo-placeholder small{font-size:.72rem;overflow-wrap:anywhere;color:#656a7b}
+
 .photo-placeholder[hidden]{display:none!important}
+
 .stall-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;z-index:2;background:#fff;padding:6px}
+
 .stall-photo[hidden]{display:none!important}
+
 .sub-art{position:relative;overflow:hidden}
+
 .sub-art .emoji{font-size:2.6rem}
+
 .detail-top .tile-art .stall-photo{border-radius:14px}
+
 .tile-body{padding:17px;display:flex;flex-direction:column;align-items:flex-start;flex:1}
+
 .eyebrow{color:var(--magenta);font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800}
+
 .tile h3{font-family:Georgia,serif;color:var(--navy);font-size:1.28rem;line-height:1.2;margin:6px 0 8px}
+
 .tile p{color:#5c6171;font-size:.91rem;margin:0 0 15px}
+
 .open-btn,.back-btn{border:0;border-radius:9px;background:var(--navy);color:white;padding:10px 14px;font:inherit;font-weight:700;cursor:pointer;margin-top:auto}
+
 .open-btn:hover,.back-btn:hover{background:var(--teal)}
+
 .open-btn:focus-visible,.back-btn:focus-visible,.chip:focus-visible{outline:3px solid var(--pink);outline-offset:2px}
+
 .sub-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+
 .sub-tile{border:1px solid var(--line);border-radius:15px;background:white;overflow:hidden;display:flex;flex-direction:column;min-height:220px;box-shadow:0 5px 22px #1013470a}
+
 .sub-art{height:260px;background:linear-gradient(135deg,#e7e9f6,#d5eef0 60%,#f8e2f0);display:flex;align-items:center;justify-content:center;font-size:2.6rem}
+
 .sub-body{padding:15px;display:flex;flex-direction:column;flex:1}
+
 .sub-body h3{font-family:Georgia,serif;font-size:1.16rem;color:var(--navy);margin:0 0 7px}
+
 .sub-body p{color:#5c6171;font-size:.88rem;margin:0 0 12px}.sub-body .sub-incharge{color:var(--teal);font-size:.84rem;font-weight:700;margin:0 0 8px}.sub-body .sub-incharge[hidden]{display:none!important}
+
 .detail-top{display:flex;gap:16px;align-items:center;margin:5px 0 22px}.detail-top .tile-art{height:140px;width:180px;flex:0 0 180px;border-radius:14px}.detail-title{flex:1}.detail-title h2{font-family:Georgia,serif;color:var(--navy);font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.15;margin:0}.detail-title p{margin:5px 0 0;color:var(--muted)}
+
 .info-strip{margin-top:22px;border:1px dashed #b9bfd5;background:#f0f1f9;border-radius:12px;padding:13px 15px;color:#555b70;font-size:.86rem}
+
 .visit-banner{max-width:1200px;margin:0 auto 26px;padding:0 clamp(14px,3vw,28px)}.visit-inner{border-radius:16px;padding:22px 24px;background:linear-gradient(115deg,#17164f,#174a7e 52%,#087d91);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:18px}.visit-inner h2{font-family:Georgia,serif;margin:0 0 5px;font-size:clamp(1.35rem,2.5vw,2rem)}.visit-inner p{margin:0;color:#edf2ff}.visit-tag{display:inline-block;margin-top:8px;color:#f3b7dd;font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem}.social-section{background:#11143d;color:white;padding:28px 16px 32px;text-align:center}.social-section h2{font-family:Georgia,serif;margin:0 0 5px}.social-section p{margin:0 0 18px;color:#d6d8ea}.social-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.social-link{display:flex;align-items:center;gap:9px;border:1px solid #ffffff40;border-radius:12px;padding:10px 15px;color:#fff;text-decoration:none;min-width:140px;background:#ffffff0b}.social-link:hover{background:#ffffff1a}.social-icon{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:#fff;color:#17164f;font-weight:900}.social-link small{display:block;color:#d6d8ea;font-size:.72rem}.social-link strong{display:block;font-size:.9rem}.social-note{margin-top:14px!important;font-size:.78rem!important;color:#bfc5e0!important}.visit-cta{display:inline-block;text-decoration:none;border-radius:10px;padding:11px 16px;background:#fff;color:#17164f;font-weight:800;white-space:nowrap}
+
 .hidden{display:none!important}.empty{grid-column:1/-1;text-align:center;padding:35px;background:white;border:1px solid var(--line);border-radius:15px;color:var(--muted)}
+
 footer{background:var(--navy);color:#fff;text-align:center;padding:24px 16px}footer strong{font-family:Georgia,serif;font-size:1.15rem}footer p{color:#d6d8ea;font-size:.83rem;margin:5px 0 0}
+
 @media(max-width:850px){.grid,.sub-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{grid-template-columns:1fr}.hero-image{height:180px}}
+
 @media(max-width:560px){.tile-art{height:240px}.sub-art{height:230px}.visit-inner{display:block;padding:19px}.visit-cta{margin-top:14px}.brand{gap:13px;align-items:center}.logo-wrap{width:66px;height:64px}.school-name{font-size:1.35rem;letter-spacing:.025em}.exhibition-label{font-size:.78rem;letter-spacing:.12em}.hero{margin-top:23px}.hero-image{height:145px}.grid,.sub-grid{grid-template-columns:1fr}.tile-art{height:170px}.section-heading{display:block}.section-heading h2{font-size:1.75rem}.detail-top{align-items:flex-start}.detail-top .tile-art{width:110px;flex-basis:110px;height:110px}.toolbar input{min-width:100%}}
 
-	/* Like and Dislike buttons for each subcategory item */
+
+
+  /* Like and Dislike buttons for each subcategory item */
+
 .reaction-buttons {
+
 display: flex;
+
 gap: 10px;
+
 margin-top: auto;
+
 padding-top: 12px;
+
 flex-wrap: wrap;
+
 }
+
+
 
 .reaction-btn {
+
 flex: 1;
+
 padding: 8px 10px;
+
 border: 1px solid #e0e2ed;
+
 border-radius: 20px;
+
 background: #fff;
+
 color: #17164f;
+
 cursor: pointer;
+
 font-size: 13px;
+
 font-weight: 600;
+
 transition: background .2s, border-color .2s;
+
 }
+
+
 
 .reaction-btn:hover {
+
 background: #f0f1f9;
+
 }
+
+
 
 .reaction-btn.liked {
+
 background: #dcfce7;
+
 border-color: #16a34a;
+
 color: #166534;
+
 }
+
+
 
 .reaction-btn.disliked {
+
 background: #fee2e2;
+
 border-color: #dc2626;
+
 color: #991b1b;
+
 }
 
-	
+
+
+
+
 /* Click-to-zoom image viewer */
+
 .stall-photo{cursor:zoom-in;transition:transform .2s ease}
+
 .stall-photo:hover{filter:brightness(.97)}
+
 .sub-art.multi-photo{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;padding:10px;align-content:start;overflow:auto}
+
 .sub-art.multi-photo .stall-photo{position:relative;inset:auto;width:100%;height:210px;min-width:0;object-fit:contain;padding:4px;border-radius:9px;background:#fff;box-shadow:0 2px 9px #10134718}
+
 .image-lightbox{position:fixed;inset:0;z-index:9999;background:rgba(8,10,30,.94);display:none;align-items:center;justify-content:center;padding:56px 20px 24px}
+
 .image-lightbox.open{display:flex}
+
 .image-lightbox img{max-width:min(96vw,1500px);max-height:88vh;object-fit:contain;border-radius:8px;box-shadow:0 12px 50px #0008}
+
 .lightbox-close{position:absolute;top:14px;right:20px;border:0;border-radius:50%;width:44px;height:44px;background:#fff;color:#17164f;font-size:28px;line-height:1;cursor:pointer}
+
 .lightbox-caption{position:absolute;bottom:12px;left:16px;right:16px;text-align:center;color:#fff;font-size:.9rem}
+
 @media(max-width:560px){.sub-art.multi-photo .stall-photo{height:145px}.image-lightbox{padding:55px 10px 35px}}
 
+
+
 </style>
+
 </head>
+
 <body>
+
 <header>
+
   <div class="brand">
+
     <div class="logo-wrap"><img src="skv-logo-white.png" alt="Scindia Kanya Vidyalaya crest"></div>
+
     <div>
+
       <div class="school-name">Scindia Kanya Vidyalaya</div>
-      <div class="exhibition-label">Founder’s Exhibition | 2–3 November 2026</div>
+
+      <div class="exhibition-label">Founder’s Exhibition | Tuesday 3 November 2026 </div>
+
       <div class="exhibition-label" style="font-size:.85rem;letter-spacing:.22em;color:#fff;margin-top:5px">Service | Heritage | Enterprise</div>
+
     </div>
+
   </div>
+
   <div class="hero">
+
     <div>
+
       <h1>Imagining Tomorrow</h1>
+
       <p>Dear Parents, Alumni, and Esteemed Guests, </p>
 
+
+
 <p>We warmly invite you to explore the Founder’s Exhibition website and discover the vibrant stalls, handcrafted products, delicious treats, sustainable initiatives, and innovative projects created by the talented SKV community. Celebrate the creativity, entrepreneurial spirit, and ingenuity of our students as they bring the theme <b><i>“Imagining Tomorrow” </i></b>to life.
+
 </p> <p>We look forward to welcoming you to this celebration of creativity and innovation!</p>
 
+
+
     </div>
+
     <div class="hero-image" role="img" aria-label="Founder’s Exhibition 2026 promotional image"></div>
+
   </div>
+
 </header>
 
+
+
 <main>
+
   <section id="homeView">
+
     <div class="toolbar">
+
       <input id="search" type="search" placeholder="Search stalls or products…" aria-label="Search stalls or products">
+
       <select id="categoryFilter" aria-label="Filter stalls by category"><option value="all">All stall categories</option></select>
+
     </div>
+
     <div class="section-heading">
+
       <div><h2>Explore the stalls</h2><p id="homeCount">Select a stall to see its subcategories.</p></div>
+
     </div>
+
     <div class="grid" id="stallGrid"></div>
+
   </section>
+
   <section id="detailView" class="hidden">
+
     <button class="back-btn" id="backButton" type="button">← All exhibition stalls</button>
+
     <div class="section-heading"><div><h2 id="detailHeading">Stall details</h2><p id="detailIntro">Choose a subcategory to explore.</p></div></div>
+
     <div class="detail-top">
+
       <div class="tile-art" id="detailArt"><span id="detailEmoji" class="emoji"></span></div>
+
       <div class="detail-title"><h2 id="detailName"></h2><p id="detailOwner"></p><p id="detailVenue">Venue: To be confirmed</p></div>
+
     </div>
+
     <div class="sub-grid" id="subGrid"></div>
+
     <div class="info-strip">Student volunteers will be available at the stalls to assist visitors and answer questions about the exhibits and products. </div>
+
   </section>
+
 </main>
+
 <section class="social-section" aria-label="Official social media links"><h2>Follow SKV for updates</h2><p>Visit our official social media pages for exhibition updates and announcements.</p><div class="social-links">
 
 
+
+
+
   <a class="social-link" href="https://www.youtube.com/c/scindiakanyavidyalayagwalior" data-placeholder="youtube" aria-label="YouTube link placeholder"><span class="social-icon">▶</span><span><strong>YouTube</strong><small>Add channel link</small></span></a>
+
 <a class="social-link" href="https://www.facebook.com/ScindiaKanyaVidyalayaGwalior/" data-placeholder="facebook" aria-label="Facebook link placeholder"><span class="social-icon">f</span><span><strong>Facebook</strong><small>Add page link</small></span></a>
+
 <a class="social-link" href="https://www.instagram.com/scindiakanyavidyalaya/" data-placeholder="instagram" aria-label="Instagram link placeholder"><span class="social-icon">◎</span><span><strong>Instagram</strong><small>Add page link</small></span></a>
+
 <a class="social-link" href="https://x.com/skvgwl1956" data-placeholder="x" aria-label="X link placeholder"><span class="social-icon">𝕏</span><span><strong>X / Twitter</strong><small>Add profile link</small></span></a>
+
 <a class="social-link" href="#" data-placeholder="linkedin" aria-label="LinkedIn link placeholder"><span class="social-icon">in</span><span><strong>LinkedIn</strong><small>Add page link</small></span></a>
+
 </div><p class="social-note">Watch the Founder’s Day event livestream on our official YouTube channel</p></section>
+
 <footer><strong>Founder’s Exhibition 2026 · Imagining Tomorrow</strong><p>© 2026 Scindia Kanya Vidyalaya. All rights reserved.  </p></footer>
+
 <script>
+
 // ============================================================
+
 // EDITABLE STALL DATA — EDIT THIS SECTION ONLY
+
 // Exhibition stall data — edit this section to update stalls and sub-stalls
+
 // Main photos: images/stalls/stall-1.jpg ... stall-10.jpg
+
 // Sub-stall photos: images/subcategories/stall-1/substall-1.jpg etc.
+
 // For multiple photos in one sub-stall card, add: images: ["substall-1.jpg", "substall-1b.jpg"]
+
 // Keep each extra photo in that stall's images/subcategories/stall-N/ folder.
+
 // Keep the image filenames and folder names exactly as written.
+
 // ============================================================
+
 const stalls = [
+
   {
+
     imageFolder: "stall-1",
+
     name: "Home Science",
+
     stallImage: "stall-1.jpg",
-    venue: "Near Home Science Lab",
-    category: "Creative Expressions",
-    owner: "Ms. Shweta Choudhary",
-    desc: "Handcrafted home décor items and dupattas",
-    subs: [
-      {
-        name: "Block-Printed Dupattas",
-        image: "substall-1.jpg", 
-        incharge: "",
-        desc: " The following students’ artworks are on display: Rishika Jalan (XI B), Naisha Mittal (XI B), Pragya Rai (XI B), Tanisi Agrawal (XI C), Aashi Goenka (XI C), Raisha Jaiswal (XI B), Anwesha Gupta (XI B), Saakhi Grover (XII B), Saanvi Jaiswal (XI B), Shivi Singh (XI B)"
-      },
-      {
-        name: "Cushion Covers and Centre Runners – Block and Screen Printing",
-        image: "substall-2.jpg",
-        incharge: "",
-        desc: " The following students’ artworks are on display:  Block Printed Centre Runners - Arushi Agrawal (XI B), Rishika Jalan (XI B), Satakashi Matanhelia (XII B) | Block Printed Cushion Covers - Rinisha Agrawal (XI B), Mishika Agrawal (XII B), Paridhi Agrawal (XI B) | Screen Printed T-shirts - Pragya Rai (XI B), Sirat Bajwa (XI B), Rishika Jalan (XI B) | Screen Printed Tote Bags - Naisha Mittal (XI B), Saanvi Jaiswal (XI B), Pragya Rai (XI B), Rishika Jalan (XI B), Sirat Bajwa (XI B)"
-      },
-      {
-        name: "T-shirts and Tote Bags",
-        image: "substall-3.jpg",
-        incharge: "",
-        desc: " The following students’ artworks are on display:Tie-Dyed Cushion Covers - Samriddhi Agrawal (XII B), Aanya Pillai (XII B), Niharika Bose (XII B), Dewangi Nahata (XII B), Suhani Bansal (XII B), Anushka Thakur (XII B) | "
-      },
-      
-      {
-        name: "Crochet Flowers and Mats",
-        image: "substall-5.jpg",
-        incharge: "",
-        desc: " The following students’ artworks are on display: Roshni Tola (XI C), Nitya Singh (X), Paloma Aaysha Rai (VIII), Logima Limboo (VII), Nunam Limboo (VII), Himadari (VII), Christina Koiram (X)"
-      },
-     
-      {
-        name: "Table Mats – Kasuti and Architectural Embroidery",
-        image: "substall-9.jpg",
-        incharge: "",
-        desc: " The following students’ artworks are on display: Shyla Tulsyan (X), Tashi Patel (X), Saanvi Shaw (XI B), Kavya (VIII), Aradhaya Mittal (VIII)"
-      }
-    ]
-  },
-  {
-    imageFolder: "stall-2",
-    name: "Paintings and Artwork",
-    stallImage: "stall-2.jpg",
+
     venue: "Inner Courtyard",
+
     category: "Creative Expressions",
-    owner: "Ms. Kalpana Sharma",
-    desc: "Painting themes: Unity in Diversity, Space Travel, and Peaceful Coexistence with Nature",
+
+    owner: "Ms. Shweta Choudhary",
+
+    desc: "Handcrafted home décor items and dupattas",
+
     subs: [
+
       {
-        name: "Acrylic on Canvas",
-        image: "substall-1.jpg",
+
+        name: "Block-Printed Dupattas",
+
+        image: "substall-1.jpg", 
+
         incharge: "",
-        desc: " The following students’ artworks are on display: Khushi Anand (X), Kashika Waikhom (IX), Yashi Mittal (X), Ananya Raj (VII), Ishani Agarwal (VIII), Aarna (VIII), Debarneeta Parida (VII), Shanaya Agrawal (VI), Aanya Sanjenbam (VII), Rishika Gupta (XI)"
+
+        desc: " The following students’ artworks are on display: Rishika Jalan (XI B), Naisha Mittal (XI B), Pragya Rai (XI B), Tanisi Agrawal (XI C), Aashi Goenka (XI C), Raisha Jaiswal (XI B), Anwesha Gupta (XI B), Saakhi Grover (XII B), Saanvi Jaiswal (XI B), Shivi Singh (XI B)"
+
       },
+
       {
-        name: "Oil on Canvas",
+
+        name: "Cushion Covers and Centre Runners ",
+
         image: "substall-2.jpg",
+
         incharge: "",
-        desc: " The following students’ artworks are on display: Jia Rajkumari (XI)"
+
+        desc: " The following students’ artworks are on display:  Block Printed Centre Runners - Arushi Agrawal (XI B), Rishika Jalan (XI B), Satakashi Matanhelia (XII B) | Block Printed Cushion Covers - Rinisha Agrawal (XI B), Mishika Agrawal (XII B), Paridhi Agrawal (XI B) | Screen Printed T-shirts - Pragya Rai (XI B), Sirat Bajwa (XI B), Rishika Jalan (XI B) | Screen Printed Tote Bags - Naisha Mittal (XI B), Saanvi Jaiswal (XI B), Pragya Rai (XI B), Rishika Jalan (XI B), Sirat Bajwa (XI B)"
+
       },
+
       {
-        name: "Charcoal Paintings",
+
+        name: "T-shirts and Tote Bags",
+
         image: "substall-3.jpg",
+
         incharge: "",
-        desc: " The following students’ artworks are on display: Nayra Amin (XI), Akriti Khediya (IX), Riddhi Agrawal (XI)"
+
+        desc: " The following students’ artworks are on display:Tie-Dyed Cushion Covers - Samriddhi Agrawal (XII B), Aanya Pillai (XII B), Niharika Bose (XII B), Dewangi Nahata (XII B), Suhani Bansal (XII B), Anushka Thakur (XII B) | "
+
       },
+
+
+
       {
-        name: "Mandala Art",
+
+        name: "Crochet Flowers and Mats",
+
         image: "substall-4.jpg",
+
         incharge: "",
-        desc: " The following students’ artworks are on display: Aisha Agrawal (XI), Mishti Gupta (XI), Naysa Kukrega (X), Mehek Modi (XI), Ahana Agarwal (VII), Kavyanshi Gupta (XI)"
+
+        desc: " The following students’ artworks are on display: Roshni Tola (XI C), Nitya Singh (X), Paloma Aaysha Rai (VIII), Logima Limboo (VII), Nunam Limboo (VII), Himadari (VII), Christina Koiram (X)"
+
       },
+
+
+
       {
-        name: "Portraits in charcoal and acrylic",
+
+        name: "Table Mats – Kasuti and Architectural Embroidery",
+
         image: "substall-5.jpg",
+
         incharge: "",
-        desc: " The following students’ artworks are on display: Maysha Khandelwal (IX) - Florence Nightingale, Kashvi Bhardwaj (X) - Dr. Mae Jemison, Shreeya Sadhani (X) - Rosalind Franklin"
-      },
-      {
-        name: "Glass Painting",
-        image: "substall-6.jpg",
-        incharge: "",
-        desc: " The following students’ artworks are on display: Namya Deswal (XII), Niharika Bose (XII), Advika Patidar (VII), Aanya Agrawal (VII), Zeenia (IX), Shruti Singhal (XI), Riona (XII), Dinakshi Subedi, Winni Pasari (XI), Venya Khedia (VII)"
-      },
-      {
-        name: "Texture Art",
-        image: "substall-7.jpg",
-        incharge: "",
-        desc: " The following students’ artworks are on display: Aahana Agarwal (IX), Aradhya Agrawal (IX)"
-      },
-      {
-        name: "Pencil Shading",
-        image: "substall-8.jpg",
-        incharge: "",
-        desc: " The following students’ artworks are on display: Pranya Tiwari (VII)"
-      },
-      {
-        name: "Pen and Ink Artwork",
-        image: "substall-9.jpg",
-        incharge: "",
-        desc: "The following students’ artworks are on display: Aryanshi Verma (VII), Navi Agrawal (X), Aradhya Mittal (VIII)"
+
+        desc: " The following students’ artworks are on display: Shyla Tulsyan (X), Tashi Patel (X), Saanvi Shaw (XI B), Kavya (VIII), Aradhaya Mittal (VIII)"
+
       }
-      
-]
+
+    ]
+
   },
+
   {
-    imageFolder: "stall-3",
-    name: "Organic Market",
-    stallImage: "stall-3.jpg",
-    venue: "Organic Farms",
-    category: "Nature, Agriculture & Sustainability",
-    owner: "Ms. Ancy Joseph, Ms. Meenakshi Dixit, and Ms. Ranjana Pathak",
-    desc: "Go green with the SKV Organic Farm",
-   subs: [
+
+    imageFolder: "stall-2",
+
+    name: "Paintings and Artwork",
+
+    stallImage: "stall-2.jpg",
+
+    venue: "Inner Courtyard",
+
+    category: "Creative Expressions",
+
+    owner: "Ms. Kalpana Sharma",
+
+    desc: "Painting themes: Unity in Diversity, Space Travel, and Peaceful Coexistence with Nature",
+
+    subs: [
+
       {
-        name: "Fresh Vegetables",
+
+        name: "Acrylic on Canvas",
+
         image: "substall-1.jpg",
-        incharge:  "Ms. Ancy Joseph ",
-        desc: "Sarson ki saag: 20 bunches, ₹40/bunch | Mixed vegetables: 25 bunches, ₹40/bunch | Methi leaves: 25 bunches, ₹50/bunch | Lemon grass: 10 bunches, ₹50/bunch | Gooseberry: 5 kg, ₹60/kg | Arbi: 25 kg, ₹80/kg | Raw turmeric: 1 kg, ₹20/250 g | Purple yam: 1 kg, ₹50/kg | Spring onion: 5 bundles, ₹20/bundle | Raw tamarind: 6 packets, ₹20/packet | Betel leaves: 10 bunches, 4 leaves per bunch, ₹20/bunch"
+
+        incharge: "",
+
+        desc: " The following students’ artworks are on display: Khushi Anand (X), Kashika Waikhom (IX), Yashi Mittal (X), Ananya Raj (VII), Ishani Agarwal (VIII), Aarna (VIII), Debarneeta Parida (VII), Shanaya Agrawal (VI), Aanya Sanjenbam (VII), Rishika Gupta (XI)"
+
       },
+
       {
-        name: "Plant Saplings",
+
+        name: "Oil on Canvas",
+
         image: "substall-2.jpg",
-        incharge: "Ms. Ranjana Pathak and Ms. Pratibha Sobhani",
-        desc: "Rose, betel, tulsi, and soybean saplings"
+
+        incharge: "",
+
+        desc: " The following students’ artworks are on display: Jia Rajkumari (XI)"
+
       },
+
       {
-        name: "Pickles",
+
+        name: "Charcoal Paintings",
+
         image: "substall-3.jpg",
-        incharge: "Ms. Snigdha Mendiratta",
-        desc: "Amla pickle, papaya tutti frutti, and more."
+
+        incharge: "",
+
+        desc: " The following students’ artworks are on display: Nayra Amin (XI), Akriti Khediya (IX), Riddhi Agrawal (XI)"
+
       },
+
       {
-        name: "Gulkand",
+
+        name: "Mandala Art",
+
         image: "substall-4.jpg",
-        incharge: "Ms. Snigdha Mendiratta",
-        desc: "• Gulkand Mukhwas: A rich, fragrant mouth freshener blending fresh rose petals, digestive fennel seeds (saunf), pure honey, sugar, and natural organic essence for an enchanting flavour. Handcrafted with love by SKV students, every sun-cured spoonful transforms simple ingredients into a sweet masterpiece that refreshes after every meal.\n\n• Fresh and Punchy – Uppu Nellikai: Crunchy, tangy, and bursting with traditional flavour! This signature salted amla pickle, crafted by SKV students, combines fresh Indian gooseberries with a pinch of salt and light spices. A zesty, vitamin-C-rich delight, it adds an irresistible traditional punch to every meal."
+
+        incharge: "",
+
+        desc: " The following students’ artworks are on display: Aisha Agrawal (XI), Mishti Gupta (XI), Naysa Kukrega (X), Mehek Modi (XI), Ahana Agarwal (VII), Kavyanshi Gupta (XI)"
+
       },
+
       {
-        name: "Bio-Enzymes",
+
+        name: "Portraits in charcoal and acrylic",
+
         image: "substall-5.jpg",
-        incharge: "Ms. Vaishali Shrivastava",
-        desc: "From Peel to Purpose: Turning Citrus Waste into Eco-Friendly Solutions"
+
+        incharge: "",
+
+        desc: " The following students’ artworks are on display: Maysha Khandelwal (IX) - Florence Nightingale, Kashvi Bhardwaj (X) - Dr. Mae Jemison, Shreeya Sadhani (X) - Rosalind Franklin"
+
       },
+
+      {
+
+        name: "Glass Painting",
+
+        image: "substall-6.jpg",
+
+        incharge: "",
+
+        desc: " The following students’ artworks are on display: Namya Deswal (XII), Niharika Bose (XII), Advika Patidar (VII), Aanya Agrawal (VII), Zeenia (IX), Shruti Singhal (XI), Riona (XII), Dinakshi Subedi, Winni Pasari (XI), Venya Khedia (VII)"
+
+      },
+
+      {
+
+        name: "Texture Art",
+
+        image: "substall-7.jpg",
+
+        incharge: "",
+
+        desc: " The following students’ artworks are on display: Aahana Agarwal (IX), Aradhya Agrawal (IX)"
+
+      },
+
+      {
+
+        name: "Pencil Shading",
+
+        image: "substall-8.jpg",
+
+        incharge: "",
+
+        desc: " The following students’ artworks are on display: Pranya Tiwari (VII)"
+
+      },
+
+      {
+
+        name: "Pen and Ink Artwork",
+
+        image: "substall-9.jpg",
+
+        incharge: "",
+
+        desc: "The following students’ artworks are on display: Aryanshi Verma (VII), Navi Agrawal (X), Aradhya Mittal (VIII)"
+
+      }
+
+
+
+]
+
+  },
+
+  {
+
+    imageFolder: "stall-3",
+
+    name: "Organic Market",
+
+    stallImage: "stall-3.jpg",
+
+    venue: "Organic Farms",
+
+    category: "Nature, Agriculture & Sustainability",
+
+    owner: "Ms. Ancy Joseph, Ms. Meenakshi Dixit, and Ms. Ranjana Pathak",
+
+    desc: "Go green with the SKV Organic Farm",
+
+   subs: [
+
+      {
+
+        name: "Fresh Vegetables",
+
+        image: "substall-1.jpg",
+
+        incharge:  "Ms. Ancy Joseph ",
+
+        desc: "Sarson ki saag: 20 bunches, ₹40/bunch | Mixed vegetables: 25 bunches, ₹40/bunch | Methi leaves: 25 bunches, ₹50/bunch | Lemon grass: 10 bunches, ₹50/bunch | Gooseberry: 5 kg, ₹60/kg | Arbi: 25 kg, ₹80/kg | Raw turmeric: 1 kg, ₹20/250 g | Purple yam: 1 kg, ₹50/kg | Spring onion: 5 bundles, ₹20/bundle | Raw tamarind: 6 packets, ₹20/packet | Betel leaves: 10 bunches, 4 leaves per bunch, ₹20/bunch"
+
+      },
+
+      {
+
+        name: "Plant Saplings",
+
+        image: "substall-2.jpg",
+
+        incharge: "Ms. Ranjana Pathak and Ms. Pratibha Sobhani",
+
+        desc: "Rose, betel, tulsi, and soybean saplings"
+
+      },
+
+      {
+
+        name: "Pickles",
+
+        image: "substall-3.jpg",
+
+        incharge: "Ms. Snigdha Mendiratta",
+
+        desc: "Amla pickle, papaya tutti frutti, and more."
+
+      },
+
+      {
+
+        name: "Gulkand",
+
+        image: "substall-4.jpg",
+
+        incharge: "Ms. Snigdha Mendiratta",
+
+        desc: "• Gulkand Mukhwas: A rich, fragrant mouth freshener blending fresh rose petals, digestive fennel seeds (saunf), pure honey, sugar, and natural organic essence for an enchanting flavour. Handcrafted with love by SKV students, every sun-cured spoonful transforms simple ingredients into a sweet masterpiece that refreshes after every meal.\n\n• Fresh and Punchy – Uppu Nellikai: Crunchy, tangy, and bursting with traditional flavour! This signature salted amla pickle, crafted by SKV students, combines fresh Indian gooseberries with a pinch of salt and light spices. A zesty, vitamin-C-rich delight, it adds an irresistible traditional punch to every meal."
+
+      },
+
+      {
+
+        name: "Bio-Enzymes",
+
+        image: "substall-5.jpg",
+
+        incharge: "Ms. Vaishali Shrivastava",
+
+        desc: "From Peel to Purpose: Turning Citrus Waste into Eco-Friendly Solutions"
+
+      },
+
+
 
        {
+
     name: "Compost",
+
     image: "substall-6.jpg",
+
     incharge: "Ms. Meenakshi Dixit",
+
     desc: "From Kitchen to Garden: Creating Sustainable Solutions\n\nTransformed by SKV students, Scindia Kanya Vidyalaya’s kitchen waste and garden leaves blossom into nutrient-rich black gold! This 100% organic compost breathes vibrant life into the soil, embodying the magic of sustainability. Nourish your plants naturally with this eco-friendly masterpiece, born from dedication, campus greenery, and pure student ingenuity.\n\nStudent Participants:\nClass VIII – Divyanshi Agrrawal, Gyanvi Agrawal, Paridhi Kayal.\nClass IX – Debasneeta Parida, Sainika Agrawal, Nitya Agrawal, Shivangini Rajesh Singh, Aradhya Singh Sisodia.\nClass X – Lavanya, Vidhi Patidar, Shanaya Tikmani, Saanvi Garg."
+
 }
-      
+
+
+
     ]
+
   },
+
   {
+
     imageFolder: "stall-4",
+
     name: "Festive Vibes",
+
     stallImage: "stall-4.jpg",
+
     venue: "Inner Courtyard",
+
     category: "Creative Expressions",
-    owner: "Ms. Vibha Paliwal",
-    desc: "ETHEREAL GLOW — A little glow, a lot of magic",
+
+    owner: "Ms. Pratibha Sobhani",
+
+    desc: "Decorative items from Class VIII",
+
     subs: [
+
+      
+
       {
-        name: "Ethereal Glow – Candles Crafted with Creativity",
-        image: "substall-1.jpg",
-        incharge: "Ms. Vibha Paliwal",
-        desc: "Discover a beautiful collection of handcrafted candles, each designed to add warmth, elegance and charm to every space. The collection features playful Bubble Candles, graceful Lotus Candles, delightful Cake Candles, festive Modak Candles, artistic Gel Wax Glass Candles and elegant Glass Candles. Blending creativity with craftsmanship, these unique candles make wonderful decorative accents and thoughtful gifts for every occasion."
-      },
-            
-      {
+
         name: "Decorated Diyas",
-        image: "substall-2.jpg",   /* stall-7 -> substall-1  */
+
+        image: "substall-2.jpg",   /* stall-7 -> substall-1 */
+
         incharge: "Ms. Pratibha Sobhani",
+
         desc: "Light Up Your Life with Handmade Love — The eighth-grade students have showcased their artistic talents by creating a vibrant collection of beautifully decorated diyas. This hands-on project allowed the students to blend traditional craftsmanship with modern creative flair.  Students Names : Divyanshi ,Gyanvi Hridaya,Paloma Shambavi,Rohini"
+
       },
+
       {
+
         name: "Crochet Items",
+
         image: "substall-3.jpg",
+
         incharge: "Ms. Pratibha Sobhani",
+
         desc: "Handmade with love, woven with creativity! - The talented students of Class VIII, Kreesha, Kavya, and Dia, present a beautiful collection of handmade crochet items, including scrunchies, keychains, bags, pouches, earrings, coasters, and trinket trays. Each creation reflects their creativity, patience, and artistic skills. Explore their unique treasures, lovingly crafted with imagination and care!"
+
       },
+
       {
+
         name: "Trinket Trays",
+
         image: "substall-4.jpg",
+
         incharge: "Ms. Pratibha Sobhani",
+
         desc: "Handcrafted trinket trays by our talented students, designed to hold little treasures like jewellery and keepsakes, adding charm and creativity to everyday spaces."
+
       }
+
     ]
+
   },
-  {
-    imageFolder: "stall-5",
-    name: "Reuse, Recreate & Craft: House Creations",
-    stallImage: "stall-5.jpg",
-    venue: "Inner Courtyard",
-    category: "Creative Expressions",
-    owner: "Ms. Ancy Joseph and Ms. Anjali Sharma",
-   
-    subs: [
-     {
-        name: "Upcycled Treasures from Old Uniforms",
-        incharge: "Ms. Ancy Joseph and Ms. Anjli Sharma",
-        image: "substall-1.jpg",
-        desc: "Emoji keychains, Heart keychains, Mini pouch keychains, Medium-size pouches, Mobile pouches, Rangoli (set), Book covers, Card mini pouches, Napkin pouch, Brush pen holders, Hand bags, Organiser box, Wall hanging (flower), Minion soft toy, Skirt, Tote bag"
-      },
-      {
-        name: "Creative Arts from Usha House ",
-        incharge: "Ms. K. Rajeshwari Pandi",
-        image: "substall-2.jpg",
-        desc: "Crafts"
-      }
-    ]
-  },
-  {
-    imageFolder: "stall-6",
-    name: "Chip 'n' Cheese SKV Culinary Club",
-    stallImage: "stall-6.jpg",
-    venue: "",
-    category: "Food & Culinary Arts",
-    owner: "Ms. Abha Virat",
-    desc: "Whispers of Cocoa & Much More",
-    subs: [
-      {
-        name: "Dry Fruit Chocolate Bites",
-        image: "substall-1.jpg",
-        incharge: "",
-        desc: ""
-      },
-     
-    ]
-  },
-  
-  
-  {
-    imageFolder: "stall-10",
-    name: "Bookmarks and Greeting Cards",
-    stallImage: "stall-10.jpg",
-    venue: "Madhav Bhavan Inner Courtyard",
-    category: "Creative Expressions",
-    owner: "Ms. Moumita Singharoy",
-    desc: "Bookmarks and cards",
-    subs: [
-      {
-        name: "Bookmarks and Greeting Cards",
-        image: "substall-1.jpg",
-        incharge: "Ms. Moumita Singharoy",
-        desc: ""
-      }
-    ]
-  },
-  {
-    imageFolder: "stall-11",
-    name: "Sculptures",
-    stallImage: "stall-11.jpg",
-    venue: "Madhav Bhavan Inner Courtyard",
-    category: "Creative Expressions",
-    owner: "Mr. B. Rao",
-    desc: "Sculptures",
-    /*subs: [
-      {
-        name: "Sculptures",
-        image: "substall-1.jpg",
-        incharge: "",
-        desc: ""
-      } 
-    ]*/
-  },
-  {
-    imageFolder: "stall-12",
-    name: "Photo Booth",
-    stallImage: "stall-12.jpg",
-    venue: "Madhav Bhavan Inner Courtyard",
-    category: "Experiences & School Identity",
-    owner: "Ms. Geeta Kohli",
-    desc: "Photobooth",
-    subs: [
-      {
-        name: "Photo Booth",
-        image: "substall-1.jpg",
-        incharge: "Ms. Geeta Kohli",
-        desc: ""
-      }
-    ]
-  },
-  {
-    imageFolder: "stall-13",
-    name: "Sankalp",
-    stallImage: "stall-13.jpg",
-    venue: "Madhav Bhavan Inner Courtyard",
-    category: "Nature, Agriculture & Sustainability",
-    owner: "Ms. Caroline Shahji and Ms. Avani Singh",
-    desc: "Sankalp",
-    subs: [
-      {
-        name: "Sankalp",
-        image: "substall-1.jpg",
-        incharge: "",
-        desc: ""
-      }
-    ]
-  },
-  {
-    imageFolder: "stall-14",
-    name: "SKV Merchandise",
-    stallImage: "stall-14.jpg",
-    venue: "Madhav Bhavan Inner Courtyard",
-    category: "Experiences & School Identity",
-    owner: "Ms. Santosh Kumar and Mr. Arun Dixit",
-    desc: "SKV Merchandise",
-    subs: [
-      {
-        name: "SKV Merchandise",
-        image: "substall-1.jpg",
-        incharge: "",
-        desc: ""
-      }
-    ]
-  },
- 
-  {
-    imageFolder: "stall-16",
-    name: "Robotics Exhibition",
-    stallImage: "stall-16.jpg",
-    venue: "Skating Ring",
-    category: "Innovation, Robotics & Science",
-    owner: "Ms. Medha & Ms. Nidhi Sharma",
-    desc: "Innovative projects",
-    subs: [
-      {
-        name: "Sanrakshak Agribot",
-        image: "substall-1.jpg",
-        incharge: "",
-        desc: "An intelligent agricultural robot designed to monitor soil conditions and support efficient farming. It helps farmers improve crop health and optimise water usage."
-      },
-      {
-        name: "Sanjeevani Battle Shield",
-        image: "substall-2.jpg",
-        incharge: "",
-        desc: "An AI-based intelligent defence and emergency response system designed to assist soldiers in hazardous situations. It aims to improve battlefield safety and support timely emergency assistance."
-      },
-      {
-        name: "FestiGuard",
-        image: "substall-3.jpg",
-        incharge: "",
-        desc: "A smart safety and crowd-monitoring system designed to improve security during festivals and public gatherings. It helps identify potential risks and supports faster emergency response."
-      },
-      {
-        name: "Forest Surveillance Using Drones",
-        image: "substall-4.jpg",
-        incharge: "",
-        desc: "A drone-based surveillance system designed to monitor forests, detect potential fire risks, and identify suspicious activities. It helps capture aerial images and supports forest protection."
-      },
-      {
-        name: "Digital Weight Monitoring System",
-        image: "substall-5.jpg",
-        incharge: "",
-        desc: "A smart weighing system that measures and displays a person's weight digitally. It can record readings over time to help monitor weight changes."
-      },
-      {
-        name: "Emergency Black Box",
-        image: "substall-6.jpg",
-        incharge: "",
-        desc: "A safety device designed to record important information during emergencies or accidents. It can help preserve critical data for later investigation and analysis."
-      },
-      {
-        name: "Smart Noise Monitoring System",
-        image: "substall-7.jpg",
-        incharge: "",
-        desc: "A smart noise-monitoring system that measures surrounding sound levels and identifies excessive noise. It can provide alerts when noise exceeds a predefined limit."
-      },
-      {
-        name: "Smart Screen Time Management App",
-        image: "substall-8.jpg",
-        incharge: "",
-        desc: "An application designed to monitor device usage and screen time. It helps users track their digital habits and encourages healthier screen-time management."
-      }
-    ]
-  },
-  {
-    imageFolder: "stall-17",
-    name: "Science Exhibition",
-    stallImage: "stall-17.jpg",
-    venue: "Skating Ring",
-    category: "Innovation, Robotics & Science",
-    owner: "Science Department",
-    desc: "Innovative projects",
-    subs: [
-      {
-        name: "Physics",
-        image: "substall-1.jpg",
-        incharge: "",
-        desc: ""
-      },
-      {
-        name: "Chemistry",
-        image: "substall-2.jpg",
-        incharge: "",
-        desc: ""
-      },
-      {
-        name: "Biology",
-        image: "substall-3.jpg",
-        incharge: "",
-        desc: ""
-      }
-    ]
-  },
-  {
-  imageFolder: "stall-18",
-  name: "Aaranya",
-  stallImage: "stall-18.jpg",
+
+ {
+  imageFolder: "stall-5",
+  name: "Legacy Start-Up",
+  stallImage: "stall-5.jpg",
   venue: "Inner Courtyard",
-  category: "Exhibition Stall",
-  /* owner: ".",  */  
-   desc: "Aaranya is a celebration of Madhya Pradesh's rich craft and cultural heritage, where traditional artistry meets contemporary design. Every piece we offer is handmade, reflecting the skill and passion of artisans who have passed down their craft through generations. At Aaranya, we create bespoke luxury that honors Indian traditions while embracing modern aesthetics, bringing Madhya Pradesh’s timeless stories into your everyday life, and beginning your own journey of patronage…",
+  category: "Creative Expressions",
+  owner: "Ms. Ancy Joseph, Ms. K. Rajeshwari, Ms. Barkha Kumpawat, Ms. Vibha Paliwal",
 
   subs: [
-    /*{
-      name: "Item-1",
+    {
+      name: "Yashodhara House – Upcycled Treasures from Old Uniforms",
+      incharge: "Ms. Ancy Joseph and Ms. Anjli Sharma",
       image: "substall-1.jpg",
-      desc: ""
-    },*/
+      desc: "A creative collection of handcrafted products made from old uniforms, including emoji keychains, heart keychains, mini pouch keychains, medium-sized pouches, mobile pouches, rangoli sets, book covers, mini card pouches, napkin pouches, brush pen holders, handbags, organizer boxes, floral wall hangings, Minion soft toys, skirts and tote bags."
+    },
     {
-      name: "Item-2",
+      name: "Usha House – Creative Arts",
+      incharge: "Ms. K. Rajeshwari Pandi",
       image: "substall-2.jpg",
-    
-      desc: "Introducing Wild Cats — a contemporary loungewear collection featuring printed satin silk angarakha shirts and kaftans, elevated with delicate sequin embellishments.\n\nDesigned to move effortlessly between comfort and statement dressing, each silhouette captures the fluidity of silk and the untamed spirit of the wild.\n\nFeel the breeze. Embrace the wild. Let heritage speak in a new design language.\n\nWild Cats by Aaranya — where untamed nature meets contemporary luxury."
+      desc: "Explore the creative talents of Usha House students: Serylda (Class 9), Jesum (Class 9), Vrinda Vijayaran (Class 11), Aanya Agarwal (Class 7) and Vidhushi (Class 7). Discover their artistic creations and handmade products."
     },
     {
-      name: "Item-3",
+      name: "Madhavi House – Handcrafted Pickles",
+      incharge: "Ms. Barkha Kumpawat",
       image: "substall-3.jpg",
-    
-      desc: "A celebration of Maratha heritage and Indian craftsmanship, the MT-2 Tiger Angarakha is crafted from handwoven Chanderi silk tissue, enriched with intricate hand-embroidered zardozi and the signature Asharfi motifs woven directly into the fabric.\n\nHandcrafted at the Aaranya Atelier, this ceremonial masterpiece brings together the luminous elegance of Chanderi and the regal artistry of traditional embroidery, elevating the Maratha silhouette into a statement of timeless grandeur.\n\nA testament to exceptional craftsmanship, each piece represents 300 hours of dedicated artistry by eight master artisans.\n\nMore than ceremonial attire, it is a legacy of heritage, painstakingly brought to life, stitch by stitch.\n\nHandcrafted at Aaranya Atelier. Woven in heritage. Embroidered in gold. Made to be remembered."
+      desc: "Discover a delightful variety of homemade pickles, prepared with traditional flavours and care."
     },
     {
-      name: "Item-4",
+      name: "Vasundhara House – Ethereal Glow: Candles Crafted with Creativity",
+      incharge: "Ms. Vibha Paliwal",
       image: "substall-4.jpg",
-      
-      desc: "Introducing Wild Cats — a contemporary loungewear collection featuring printed satin silk angarakha shirts and kaftans, elevated with delicate sequin embellishments.\n\nDesigned to move effortlessly between comfort and statement dressing, each silhouette captures the fluidity of silk and the untamed spirit of the wild.\n\nFeel the breeze. Embrace the wild. Let heritage speak in a new design language.\n\nWild Cats by Aaranya — where untamed nature meets contemporary luxury."
-    },
-    {
-      name: "Item-5",
-      image: "substall-5.jpg",
-   
-      desc: "SHER BAGH | A REVERSIBLE HEIRLOOM\n\nTwo rare printing traditions. One statement of timeless luxury.\n\nHandcrafted at the Aaranya Atelier, the Sher Bagh Reversible Jacket is a celebration of India’s extraordinary textile heritage, reimagined for the discerning connoisseur.\n\nOne side showcases the intricate beauty of hand-printed Ujjain Batik on PadmaDoree fabric; turn it inside out to reveal the distinctive Bagh prints of Dhar. Each side tells a different story, bringing together two celebrated printing traditions in a single, thoughtfully crafted silhouette.\n\nMore than a jacket, Sher Bagh is a collector’s piece—a meeting of artisanal mastery, cultural legacy, and contemporary luxury, made to be worn two ways and treasured for years."
+      desc: "Discover a beautiful collection of handcrafted candles, each designed to add warmth, elegance and charm to every space. The collection features playful Bubble Candles, graceful Lotus Candles, delightful Cake Candles, festive Modak Candles, artistic Gel Wax Glass Candles and elegant Glass Candles. Blending creativity with craftsmanship, these unique candles make wonderful decorative accents and thoughtful gifts for every occasion."
     }
   ]
+},
+
+  {
+
+    imageFolder: "stall-6",
+
+    name: "Chip 'n' Cheese SKV Culinary Club",
+
+    stallImage: "stall-6.jpg",
+
+    venue: "",
+
+    category: "Food & Culinary Arts",
+
+    owner: "Ms. Abha Virat",
+
+    desc: "Whispers of Cocoa & Much More",
+
+    subs: [
+
+      {
+
+        name: "SKV Pop up Menu",
+
+        image: "substall-1.jpg",
+
+        incharge: "",
+
+        desc: ""
+
+      },
+
+
+
+    ]
+
+  },
+
+
+
+
+
+  {
+
+    imageFolder: "stall-10",
+
+    name: "Bookmarks and Greeting Cards",
+
+    stallImage: "stall-10.jpg",
+
+    venue: "Madhav Bhavan Inner Courtyard",
+
+    category: "Creative Expressions",
+
+    owner: "Ms. Moumita Singharoy",
+
+    desc: "Bookmarks and cards",
+
+    subs: [
+
+     /* {
+
+        name: "Bookmarks and Greeting Cards",
+
+        image: "substall-1.jpg",
+
+        incharge: "Ms. Moumita Singharoy",
+
+        desc: ""
+
+      } */
+
+    ]
+
+  },
+
+  {
+
+    imageFolder: "stall-11",
+
+    name: "Sculptures",
+
+    stallImage: "stall-11.jpg",
+
+    venue: "Madhav Bhavan Inner Courtyard",
+
+    category: "Creative Expressions",
+
+    owner: "Mr. B. Rao",
+
+    desc: "Sculptures",
+
+    /*subs: [
+
+      {
+
+        name: "Sculptures",
+
+        image: "substall-1.jpg",
+
+        incharge: "",
+
+        desc: ""
+
+      } 
+
+    ]*/
+
+  },
+
+  {
+
+    imageFolder: "stall-12",
+
+    name: "Photo Booth",
+
+    stallImage: "stall-12.jpg",
+
+    venue: "Madhav Bhavan Inner Courtyard",
+
+    category: "Experiences & School Identity",
+
+    owner: "Ms. Geeta Kohli",
+
+    desc: "Photobooth",
+
+    subs: [
+
+     /* {
+
+        name: "Photo Booth",
+
+        image: "substall-1.jpg",
+
+        incharge: "Ms. Geeta Kohli",
+
+        desc: ""
+
+      }*/
+
+    ]
+
+  },
+
+  {
+
+    imageFolder: "stall-13",
+
+    name: "Sankalp",
+
+    stallImage: "stall-13.jpg",
+
+    venue: "Madhav Bhavan Inner Courtyard",
+
+    category: "Nature, Agriculture & Sustainability",
+
+    owner: "Ms. Caroline Shahji and Ms. Avani Singh",
+
+    desc: "Sankalp",
+
+    subs: [
+
+    /*  {
+
+        name: "Sankalp",
+
+        image: "substall-1.jpg",
+
+        incharge: "",
+
+        desc: ""
+
+      } */
+
+    ]
+
+  },
+
+  {
+
+    imageFolder: "stall-14",
+
+    name: "SKV Merchandise",
+
+    stallImage: "stall-14.jpg",
+
+    venue: "Madhav Bhavan Inner Courtyard",
+
+    category: "Experiences & School Identity",
+
+    owner: "Ms. Santosh Kumar and Mr. Arun Dixit",
+
+    desc: "SKV Merchandise",
+
+    subs: [
+
+     /* {
+
+        name: "SKV Merchandise",
+
+        image: "substall-1.jpg",
+
+        incharge: "",
+
+        desc: ""
+
+      } */
+
+    ]
+
+  },
+
+
+
+  {
+
+    imageFolder: "stall-16",
+
+    name: "Robotics Exhibition",
+
+    stallImage: "stall-16.jpg",
+
+    venue: "Skating Ring",
+
+    category: "Innovation, Robotics & Science",
+
+    owner: "Ms. Medha & Ms. Nidhi Sharma",
+
+    desc: "Innovative projects",
+
+    subs: [
+
+    /*  {
+
+        name: "Sanrakshak Agribot",
+
+        image: "substall-1.jpg",
+
+        incharge: "",
+
+        desc: "An intelligent agricultural robot designed to monitor soil conditions and support efficient farming. It helps farmers improve crop health and optimise water usage."
+
+      },
+
+      {
+
+        name: "Sanjeevani Battle Shield",
+
+        image: "substall-2.jpg",
+
+        incharge: "",
+
+        desc: "An AI-based intelligent defence and emergency response system designed to assist soldiers in hazardous situations. It aims to improve battlefield safety and support timely emergency assistance."
+
+      },
+
+      {
+
+        name: "FestiGuard",
+
+        image: "substall-3.jpg",
+
+        incharge: "",
+
+        desc: "A smart safety and crowd-monitoring system designed to improve security during festivals and public gatherings. It helps identify potential risks and supports faster emergency response."
+
+      },
+
+      {
+
+        name: "Forest Surveillance Using Drones",
+
+        image: "substall-4.jpg",
+
+        incharge: "",
+
+        desc: "A drone-based surveillance system designed to monitor forests, detect potential fire risks, and identify suspicious activities. It helps capture aerial images and supports forest protection."
+
+      },
+
+      {
+
+        name: "Digital Weight Monitoring System",
+
+        image: "substall-5.jpg",
+
+        incharge: "",
+
+        desc: "A smart weighing system that measures and displays a person's weight digitally. It can record readings over time to help monitor weight changes."
+
+      },
+
+      {
+
+        name: "Emergency Black Box",
+
+        image: "substall-6.jpg",
+
+        incharge: "",
+
+        desc: "A safety device designed to record important information during emergencies or accidents. It can help preserve critical data for later investigation and analysis."
+
+      },
+
+      {
+
+        name: "Smart Noise Monitoring System",
+
+        image: "substall-7.jpg",
+
+        incharge: "",
+
+        desc: "A smart noise-monitoring system that measures surrounding sound levels and identifies excessive noise. It can provide alerts when noise exceeds a predefined limit."
+
+      },
+
+      {
+
+        name: "Smart Screen Time Management App",
+
+        image: "substall-8.jpg",
+
+        incharge: "",
+
+        desc: "An application designed to monitor device usage and screen time. It helps users track their digital habits and encourages healthier screen-time management."
+
+      } */
+
+    ]
+
+  },
+
+  {
+
+    imageFolder: "stall-17",
+
+    name: "Science Exhibition",
+
+    stallImage: "stall-17.jpg",
+
+    venue: "Skating Ring",
+
+    category: "Innovation, Robotics & Science",
+
+    owner: "Science Department",
+
+    desc: "Innovative projects",
+
+    subs: [
+
+     /* {
+
+        name: "Physics",
+
+        image: "substall-1.jpg",
+
+        incharge: "",
+
+        desc: ""
+
+      },
+
+      {
+
+        name: "Chemistry",
+
+        image: "substall-2.jpg",
+
+        incharge: "",
+
+        desc: ""
+
+      },
+
+      {
+
+        name: "Biology",
+
+        image: "substall-3.jpg",
+
+        incharge: "",
+
+        desc: ""
+
+      } */
+
+    ]
+
+  },
+
+  {
+
+  imageFolder: "stall-18",
+
+  name: "Aaranya",
+
+  stallImage: "stall-18.jpg",
+
+  venue: "Inner Courtyard",
+
+  category: "Exhibition Stall",
+
+  owner: ".",
+
+  desc: "Aaranya is a celebration of Madhya Pradesh's rich craft and cultural heritage, where traditional artistry meets contemporary design. Every piece we offer is handmade, reflecting the skill and passion of artisans who have passed down their craft through generations. At Aaranya, we create bespoke luxury that honors Indian traditions while embracing modern aesthetics, bringing Madhya Pradesh’s timeless stories into your everyday life, and beginning your own journey of patronage…",
+
+
+
+  subs: [
+
+   /* {
+
+      name: "Item-1",
+
+      image: "substall-1.jpg",
+
+      desc: ""
+
+    },*/
+
+    {
+
+      name: "Item-1",
+
+      image: "substall-2.jpg",
+
+      incharge: "",
+
+      desc: "Introducing Wild Cats — a contemporary loungewear collection featuring printed satin silk angarakha shirts and kaftans, elevated with delicate sequin embellishments.\n\nDesigned to move effortlessly between comfort and statement dressing, each silhouette captures the fluidity of silk and the untamed spirit of the wild.\n\nFeel the breeze. Embrace the wild. Let heritage speak in a new design language.\n\nWild Cats by Aaranya — where untamed nature meets contemporary luxury."
+
+    },
+
+    {
+
+      name: "Item-2",
+
+      image: "substall-3.jpg",
+
+      incharge: "",
+
+      desc: "A celebration of Maratha heritage and Indian craftsmanship, the MT-2 Tiger Angarakha is crafted from handwoven Chanderi silk tissue, enriched with intricate hand-embroidered zardozi and the signature Asharfi motifs woven directly into the fabric.\n\nHandcrafted at the Aaranya Atelier, this ceremonial masterpiece brings together the luminous elegance of Chanderi and the regal artistry of traditional embroidery, elevating the Maratha silhouette into a statement of timeless grandeur.\n\nA testament to exceptional craftsmanship, each piece represents 300 hours of dedicated artistry by eight master artisans.\n\nMore than ceremonial attire, it is a legacy of heritage, painstakingly brought to life, stitch by stitch.\n\nHandcrafted at Aaranya Atelier. Woven in heritage. Embroidered in gold. Made to be remembered."
+
+    },
+
+    {
+
+      name: "Item-3",
+
+      image: "substall-4.jpg",
+
+      incharge: "",
+
+      desc: "Introducing Wild Cats — a contemporary loungewear collection featuring printed satin silk angarakha shirts and kaftans, elevated with delicate sequin embellishments.\n\nDesigned to move effortlessly between comfort and statement dressing, each silhouette captures the fluidity of silk and the untamed spirit of the wild.\n\nFeel the breeze. Embrace the wild. Let heritage speak in a new design language.\n\nWild Cats by Aaranya — where untamed nature meets contemporary luxury."
+
+    },
+
+    {
+
+      name: "Item-4",
+
+      image: "substall-5.jpg",
+
+      incharge: "",
+
+      desc: "SHER BAGH | A REVERSIBLE HEIRLOOM\n\nTwo rare printing traditions. One statement of timeless luxury.\n\nHandcrafted at the Aaranya Atelier, the Sher Bagh Reversible Jacket is a celebration of India’s extraordinary textile heritage, reimagined for the discerning connoisseur.\n\nOne side showcases the intricate beauty of hand-printed Ujjain Batik on PadmaDoree fabric; turn it inside out to reveal the distinctive Bagh prints of Dhar. Each side tells a different story, bringing together two celebrated printing traditions in a single, thoughtfully crafted silhouette.\n\nMore than a jacket, Sher Bagh is a collector’s piece—a meeting of artisanal mastery, cultural legacy, and contemporary luxury, made to be worn two ways and treasured for years."
+
+    }
+
+  ]
+
 }
+
 ];
 
+
+
 function slugify(value){
+
  return String(value||'').toLowerCase().normalize('NFD')
+
   .replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+
 }
+
 function normalizeSub(item){
+
  if(Array.isArray(item)) {
+
    return {name:item[0]||'Item',desc:item[2]||'',image:'',incharge:''};
+
  }
+
  return {
+
    name:item.name||'Item',
+
    desc:item.desc||'',
+
    image:item.image||'',
+
    images:Array.isArray(item.images)?item.images:(Array.isArray(item.image)?item.image:[]),
+
    incharge:item.incharge||''
+
  };
+
 }
+
+
 
 function addPhoto(container,path,alt){
+
  const img=document.createElement('img');img.className='stall-photo';img.alt=alt||'';img.loading='lazy';
+
  const candidates=[path,path.replace(/\.jpg$/i,'.JPG'),path.replace(/\.jpg$/i,'.jpeg'),path.replace(/\.jpg$/i,'.JPEG'),path.replace(/\.jpg$/i,'.png'),path.replace(/\.jpg$/i,'.PNG')];
+
  let attempt=0;
+
  img.onerror=function(){attempt++;if(attempt<candidates.length){img.src=candidates[attempt];}else{img.hidden=true;}};
+
  img.onload=function(){img.hidden=false;};img.src=candidates[0];
+
  img.addEventListener('click',()=>openLightbox(img.src,alt||'Exhibition image'));
+
  container.prepend(img);return img;
+
 }
+
 function resolveSubImagePath(stall,path){
+
  if(!path)return '';
+
  return path.startsWith('images/')?path:'images/subcategories/'+(stall.imageFolder||slugify(stall.name))+'/'+path;
+
 }
+
 function addSubPhotos(container,stall,sub){
+
  const paths=(sub.images&&sub.images.length?sub.images:(sub.image?[sub.image]:[])).filter(Boolean);
+
  if(paths.length>1)container.classList.add('multi-photo');
+
  if(!paths.length){
+
    const fallback='images/subcategories/'+(stall.imageFolder||slugify(stall.name))+'/'+slugify(sub.name)+'.jpg';
+
    addPhoto(container,fallback,sub.name);return;
+
  }
+
  paths.forEach((path,index)=>{
+
    const img=document.createElement('img');img.className='stall-photo';img.alt=(sub.name||'Sub-stall')+' - image '+(index+1);img.loading='lazy';
+
    const fullPath=resolveSubImagePath(stall,path);
+
    const candidates=[fullPath,fullPath.replace(/\.jpg$/i,'.JPG'),fullPath.replace(/\.jpg$/i,'.jpeg'),fullPath.replace(/\.jpg$/i,'.JPEG'),fullPath.replace(/\.jpg$/i,'.png'),fullPath.replace(/\.jpg$/i,'.PNG')];
+
    let attempt=0;img.onerror=function(){attempt++;if(attempt<candidates.length)img.src=candidates[attempt];else img.hidden=true;};
+
    img.addEventListener('click',()=>openLightbox(img.src,img.alt));
+
    img.src=candidates[0];container.appendChild(img);
+
  });
+
 }
+
 let lightboxElement=null;
+
 function openLightbox(src,caption){
+
  if(!src)return;
+
  if(!lightboxElement){
+
    lightboxElement=document.createElement('div');lightboxElement.className='image-lightbox';lightboxElement.setAttribute('role','dialog');lightboxElement.setAttribute('aria-modal','true');lightboxElement.setAttribute('aria-label','Image preview');
+
    lightboxElement.innerHTML='<button type="button" class="lightbox-close" aria-label="Close image preview">×</button><img alt=""><div class="lightbox-caption"></div>';
+
    document.body.appendChild(lightboxElement);
+
    lightboxElement.addEventListener('click',e=>{if(e.target===lightboxElement||e.target.classList.contains('lightbox-close'))closeLightbox();});
+
    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
+
  }
+
  const preview=lightboxElement.querySelector('img');preview.src=src;preview.alt=caption||'Exhibition image';
+
  lightboxElement.querySelector('.lightbox-caption').textContent=caption||'';
+
  lightboxElement.classList.add('open');document.body.style.overflow='hidden';
+
 }
+
 function closeLightbox(){
+
  if(lightboxElement){lightboxElement.classList.remove('open');document.body.style.overflow='';}
+
 }
+
 function getStallImage(stall){return 'images/stalls/'+(stall.stallImage||slugify(stall.name)+'.jpg');}
+
 function makeTile(stall){
+
  const el=document.createElement('article');el.className='tile';
+
  el.innerHTML=`<div class="tile-art"></div><div class="tile-body"><div class="eyebrow"></div><h3></h3><p class="stall-desc"></p><p class="stall-owner"></p><p class="stall-venue"></p><button class="open-btn" type="button">Explore stall →</button></div>`;
+
  el.querySelector('.eyebrow').textContent=stall.category||'';
+
  el.querySelector('h3').textContent=stall.name;
+
  el.querySelector('.stall-desc').textContent=stall.desc||'';
+
  el.querySelector('.stall-owner').textContent='In-charge: '+(stall.owner||'To be confirmed');
+
  el.querySelector('.stall-venue').textContent='Venue: '+(stall.venue||'To be confirmed');
+
  addPhoto(el.querySelector('.tile-art'),getStallImage(stall),stall.name);
+
  el.querySelector('button').addEventListener('click',()=>openStall(stall.name));
+
  return el;
+
 }
+
 function renderHome(){
+
  const q=search.value.trim().toLowerCase(),cat=categoryFilter.value;
+
  const shown=stalls.filter(stall=>{
+
   const subText=(stall.subs||[]).map(item=>{const x=normalizeSub(item);return x.name+' '+x.desc;});
+
   return (cat==='all'||stall.category===cat)&&[stall.name,stall.category,stall.owner,stall.desc,...subText].join(' ').toLowerCase().includes(q);
+
  });
+
  stallGrid.innerHTML='';shown.forEach(stall=>stallGrid.appendChild(makeTile(stall)));
+
  document.getElementById('homeCount').textContent=`${shown.length} stalls · Select any stall tile to open its subcategories.`;
+
  if(!shown.length)stallGrid.innerHTML='<div class="empty">No stalls match your search. Try another keyword or category.</div>';
+
 }
+
 function makeSubTile(stall,item){
+
  const sub=normalizeSub(item),tile=document.createElement('article');
+
  tile.className='sub-tile';
+
  tile.innerHTML=`<div class="sub-art"></div><div class="sub-body">
+
    <h3></h3>
+
    <p class="sub-incharge"></p>
+
    <p class="sub-description"></p>
+
    <div class="reaction-buttons">
+
      <button type="button" class="reaction-btn" data-vote="like" aria-pressed="false">Like <span>0</span></button>
+
      <button type="button" class="reaction-btn" data-vote="dislike" aria-pressed="false">Dislike <span>0</span></button>
+
    </div>
+
  </div>`;
+
  tile.querySelector('h3').textContent=sub.name;
 
+
+
  const inchargeElement=tile.querySelector('.sub-incharge');
+
  inchargeElement.textContent=sub.incharge ? 'In-charge: '+sub.incharge : '';
+
  inchargeElement.hidden=!sub.incharge;
 
+
+
  tile.querySelector('.sub-description').textContent=sub.desc;
+
  addSubPhotos(tile.querySelector('.sub-art'),stall,sub);
+
  setupReactions(tile,stall.name,sub.name);
+
  return tile;
+
 }
+
 function setupReactions(tile,stallName,itemName){
+
  const key='skv-exhibition-reaction:'+slugify(stallName)+':'+slugify(itemName);
+
  const likeBtn=tile.querySelector('[data-vote="like"]'),dislikeBtn=tile.querySelector('[data-vote="dislike"]');
+
  function read(){try{return JSON.parse(localStorage.getItem(key)||'{"like":0,"dislike":0,"selected":""}')}catch(e){return {like:0,dislike:0,selected:''}}}
+
  function paint(){const v=read();likeBtn.querySelector('span').textContent=v.like;dislikeBtn.querySelector('span').textContent=v.dislike;likeBtn.classList.toggle('liked',v.selected==='like');dislikeBtn.classList.toggle('disliked',v.selected==='dislike');likeBtn.setAttribute('aria-pressed',String(v.selected==='like'));dislikeBtn.setAttribute('aria-pressed',String(v.selected==='dislike'));}
+
  function vote(type){const v=read();if(v.selected===type){v[type]=Math.max(0,v[type]-1);v.selected='';}else{if(v.selected)v[v.selected]=Math.max(0,v[v.selected]-1);v[type]++;v.selected=type;}try{localStorage.setItem(key,JSON.stringify(v));}catch(e){}paint();}
+
  likeBtn.addEventListener('click',()=>vote('like'));dislikeBtn.addEventListener('click',()=>vote('dislike'));paint();
+
 }
+
 function openStall(name){
+
  activeStall=stalls.find(stall=>stall.name===name);if(!activeStall)return;
+
  homeView.classList.add('hidden');detailView.classList.remove('hidden');
+
  document.getElementById('detailHeading').textContent=activeStall.name;
+
  document.getElementById('detailIntro').textContent=activeStall.desc||'Choose a subcategory to explore.';
+
  document.getElementById('detailEmoji').textContent='';
+
  const detailArt=document.getElementById('detailArt');detailArt.querySelectorAll('.stall-photo').forEach(img=>img.remove());
+
  addPhoto(detailArt,getStallImage(activeStall),activeStall.name);
+
  document.getElementById('detailName').textContent=activeStall.name;
+
  document.getElementById('detailOwner').textContent='In-charge: '+(activeStall.owner||'To be confirmed');
+
  document.getElementById('detailVenue').textContent='Venue: '+(activeStall.venue || 'To be confirmed');
+
  subGrid.innerHTML='';(activeStall.subs||[]).forEach(item=>subGrid.appendChild(makeSubTile(activeStall,item)));
+
  window.scrollTo({top:0,behavior:'smooth'});
+
  if(history.pushState)history.pushState({stall:name},'','#stall-'+slugify(name));
+
 }
+
 function showHome(){detailView.classList.add('hidden');homeView.classList.remove('hidden');activeStall=null;if(location.hash.startsWith('#stall-'))history.replaceState({},'',location.pathname+location.search);window.scrollTo({top:0,behavior:'smooth'});}
+
 [...new Set(stalls.map(stall=>stall.category).filter(Boolean))].sort().forEach(category=>{const option=document.createElement('option');option.value=category;option.textContent=category;categoryFilter.appendChild(option);});
+
 document.getElementById('backButton').addEventListener('click',showHome);
+
 search.addEventListener('input',renderHome);categoryFilter.addEventListener('change',renderHome);
+
 window.addEventListener('popstate',()=>{if(location.hash.startsWith('#stall-')){const slug=decodeURIComponent(location.hash.slice(7));const match=stalls.find(stall=>slugify(stall.name)===slug);if(match){openStall(match.name);return;}}detailView.classList.add('hidden');homeView.classList.remove('hidden');});
+
 renderHome();
+
 </script>
+
 </body>
+
 </html>
