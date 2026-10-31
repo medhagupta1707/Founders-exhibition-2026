@@ -692,7 +692,7 @@ const stalls = [
 
     owner: "Ms. Pratibha Sobhani",
 
-    desc: "Decorative items from Class VIII",
+    desc: "Light Up Your Life with Handmade Love — Decorated Diyas & Crochet Treasures! 🪔🧶",
 
     subs: [
 
@@ -732,8 +732,8 @@ const stalls = [
 
         desc: "Handcrafted trinket trays by our talented students, designed to hold little treasures like jewellery and keepsakes, adding charm and creativity to everyday spaces."
 
-      }
-       {
+      },
+      {
 
         name: "Terracotta Earrings",
 
@@ -741,7 +741,7 @@ const stalls = [
 
         incharge: "Ms. Ms Shagufta",
 
-        desc: "Handcrafted trinket trays by our talented students, designed to hold little treasures like jewellery and keepsakes, adding charm and creativity to everyday spaces."
+        desc: "Handcrafted with Love by Class IX"
 
       }
 
@@ -1185,7 +1185,7 @@ const stalls = [
 
   category: "Exhibition Stall",
 
-  owner: ".",
+   owner: "Aaranya Gwalior", 
 
   desc: "Aaranya is a celebration of Madhya Pradesh's rich craft and cultural heritage, where traditional artistry meets contemporary design. Every piece we offer is handmade, reflecting the skill and passion of artisans who have passed down their craft through generations. At Aaranya, we create bespoke luxury that honors Indian traditions while embracing modern aesthetics, bringing Madhya Pradesh’s timeless stories into your everyday life, and beginning your own journey of patronage…",
 
@@ -1285,7 +1285,9 @@ function normalizeSub(item){
 
    images:Array.isArray(item.images)?item.images:(Array.isArray(item.image)?item.image:[]),
 
-   incharge:item.incharge||''
+   // Trim whitespace so blank or space-only values count as empty.
+
+   incharge:String(item.incharge ?? '').trim()
 
  };
 
@@ -1461,9 +1463,21 @@ function makeSubTile(stall,item){
 
  const inchargeElement=tile.querySelector('.sub-incharge');
 
- inchargeElement.textContent=sub.incharge ? 'In-charge: '+sub.incharge : '';
+ if (sub.incharge) {
 
- inchargeElement.hidden=!sub.incharge;
+   inchargeElement.textContent='In-charge: '+sub.incharge;
+
+   inchargeElement.hidden=false;
+
+ } else {
+
+   // Hide the complete in-charge line when no name is supplied.
+
+   inchargeElement.textContent='';
+
+   inchargeElement.hidden=true;
+
+ }
 
 
 
@@ -1493,7 +1507,12 @@ function setupReactions(tile,stallName,itemName){
 
 }
 
-function openStall(name){
+function scrollToSection(section){
+ const top=section.getBoundingClientRect().top+window.pageYOffset-18;
+ window.scrollTo({top:Math.max(0,top),behavior:'smooth'});
+}
+
+function openStall(name, updateHistory=true){
 
  activeStall=stalls.find(stall=>stall.name===name);if(!activeStall)return;
 
@@ -1517,13 +1536,13 @@ function openStall(name){
 
  subGrid.innerHTML='';(activeStall.subs||[]).forEach(item=>subGrid.appendChild(makeSubTile(activeStall,item)));
 
- window.scrollTo({top:0,behavior:'smooth'});
+ scrollToSection(detailView);
 
- if(history.pushState)history.pushState({stall:name},'','#stall-'+slugify(name));
+ if(updateHistory && history.pushState)history.pushState({stall:name},'','#stall-'+slugify(name));
 
 }
 
-function showHome(){detailView.classList.add('hidden');homeView.classList.remove('hidden');activeStall=null;if(location.hash.startsWith('#stall-'))history.replaceState({},'',location.pathname+location.search);window.scrollTo({top:0,behavior:'smooth'});}
+function showHome(){detailView.classList.add('hidden');homeView.classList.remove('hidden');activeStall=null;if(location.hash.startsWith('#stall-'))history.replaceState({},'',location.pathname+location.search);scrollToSection(homeView);}
 
 [...new Set(stalls.map(stall=>stall.category).filter(Boolean))].sort().forEach(category=>{const option=document.createElement('option');option.value=category;option.textContent=category;categoryFilter.appendChild(option);});
 
@@ -1531,7 +1550,7 @@ document.getElementById('backButton').addEventListener('click',showHome);
 
 search.addEventListener('input',renderHome);categoryFilter.addEventListener('change',renderHome);
 
-window.addEventListener('popstate',()=>{if(location.hash.startsWith('#stall-')){const slug=decodeURIComponent(location.hash.slice(7));const match=stalls.find(stall=>slugify(stall.name)===slug);if(match){openStall(match.name);return;}}detailView.classList.add('hidden');homeView.classList.remove('hidden');});
+window.addEventListener('popstate',()=>{if(location.hash.startsWith('#stall-')){const slug=decodeURIComponent(location.hash.slice(7));const match=stalls.find(stall=>slugify(stall.name)===slug);if(match){openStall(match.name,false);return;}}detailView.classList.add('hidden');homeView.classList.remove('hidden');activeStall=null;scrollToSection(homeView);});
 
 renderHome();
 
